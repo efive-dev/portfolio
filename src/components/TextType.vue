@@ -144,11 +144,12 @@ onMounted(() => {
   if (props.showCursor && cursorRef.value) {
     gsap.set(cursorRef.value, { opacity: 1 });
     gsap.to(cursorRef.value, {
-      opacity: 0,
+      opacity: 1,
       duration: props.cursorBlinkDuration,
       repeat: -1,
       yoyo: true,
       ease: "power2.inOut",
+      color: "#FFFFFF",
     });
   }
 
