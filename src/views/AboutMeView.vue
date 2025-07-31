@@ -1,19 +1,35 @@
 <template>
-  <div>
-    <h1 class="text-9xl bg-amber-950">About me</h1>
-    <button
-      type="button"
-      @click="goback"
-      class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-    >
-      Go back button
-    </button>
+  <div class="block bg-black min-h-screen h-screen w-screen">
+    <FlowingMenu :items="items" />
   </div>
 </template>
 
 <script setup lang="ts">
 import router from "../router/index";
+import FlowingMenu from "../components/FlowingMenu.vue";
 
+const items = [
+  {
+    link: "#",
+    text: "About Me",
+    image: "./../public/about-me.png",
+  },
+  {
+    link: "#",
+    text: "Why me?",
+    image: "./../public/why-me.png",
+  },
+  {
+    link: "#",
+    text: "My Skills",
+    image: "./../public/skills.png",
+  },
+  {
+    link: "/",
+    text: "Homepage",
+    image: "./../back-to-homepage.png",
+  },
+];
 const goback = () => {
   router.push("/");
 };
