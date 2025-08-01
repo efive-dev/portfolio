@@ -14,12 +14,12 @@ const items = [
     image: "/about-me.png",
   },
   {
-    link: "#",
+    link: "/about-me/why-me/",
     text: "Why me?",
     image: "/why-me.png",
   },
   {
-    link: "#",
+    link: "/about-me/skills",
     text: "My Skills",
     image: "/skills.png",
   },

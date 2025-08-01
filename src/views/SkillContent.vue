@@ -4,7 +4,7 @@
       <div class="flex-3">
         <div class="flex">
           <SplitText
-            text="About Me!"
+            text="My skills"
             class-name="text-6xl md:text-9xl font-bold text-white"
             :delay="300"
             :duration="0.6"
@@ -47,7 +47,7 @@
 
       <div class="flex-1">
         <img
-          src="/about-me-contents.png"
+          src="/skills-content.png"
           class="rounded-2xl object-cover w-full"
         />
       </div>
