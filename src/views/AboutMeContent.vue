@@ -105,7 +105,7 @@
       </div>
     </div>
     <div class="text-white pt-3 text-left text-2xl">
-      <h2 class="font-extrabold text-3xl">Closing thoughts</h2>
+      <h2 class="font-extrabold text-3xl">Closing thoughts:</h2>
       <p class="pt-2">
         But there's more of me than just code!<br />
         Outside of <b>programming</b> and computer science, I'm also passionate
