@@ -1,36 +1,32 @@
 <template>
-  <div class="block bg-black min-h-screen h-screen w-screen">
+  <div class="block min-h-screen h-screen w-screen">
     <FlowingMenu :items="items" />
   </div>
 </template>
 
 <script setup lang="ts">
-import router from "../router/index";
 import FlowingMenu from "../components/FlowingMenu.vue";
 
 const items = [
   {
-    link: "#",
+    link: "/about-me/contents/",
     text: "About Me",
-    image: "./../public/about-me.png",
+    image: "/about-me.png",
   },
   {
     link: "#",
     text: "Why me?",
-    image: "./../public/why-me.png",
+    image: "/why-me.png",
   },
   {
     link: "#",
     text: "My Skills",
-    image: "./../public/skills.png",
+    image: "/skills.png",
   },
   {
     link: "/",
     text: "Homepage",
-    image: "./../back-to-homepage.png",
+    image: "/back-to-homepage.png",
   },
 ];
-const goback = () => {
-  router.push("/");
-};
 </script>
