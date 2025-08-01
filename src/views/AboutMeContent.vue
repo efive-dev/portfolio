@@ -37,7 +37,7 @@
           class="mt-6 text-white text-2xl flex-2 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
         >
           <h1 class="underline font-extrabold text-4xl">
-            A small introduction:
+            A brief introduction:
           </h1>
           <div class="ps-5">
             <p class="pt-2">
@@ -60,7 +60,7 @@
               Since then, I've grown significantly, both personally and
               technically, especially through my pursuit of a Bachelor's Degree
               in Computer Science at the University of Florence, Italy. Some of
-              my favourite subjects and areas of interest include:
+              my favorite subjects and areas of interest include:
             </p>
             <ul class="list-disc ps-15">
               <li><i>Data structures and algorithms</i></li>
@@ -77,13 +77,11 @@
               <b>excitement</b> and <b>joy</b>. <br />
               One thing is certain: I will never stop <i>learning</i> or being
               <i>excited about learning</i>. <br />
-              If you are more interested in my technical skills, please refer to
-              the
+              Want to dive deeper into what I can do? Check out the
               <a class="font-extrabold hover:underline" href="/about-me/skills"
                 >skills</a
               >
-              section. If you want to see some of my projects, please refer to
-              the
+              section. Curious about some of my previous work? Head over to the
               <a class="font-extrabold hover:underline" href="/projects"
                 >projects</a
               >
@@ -99,7 +97,7 @@
           class="rounded-2xl object-cover w-full"
         />
         <a
-          class="pi pi-github text-white text-7xl pt-10"
+          class="pi pi-github text-white text-7xl pt-10 hover:drop-shadow-lg hover:text-blue-200 hover:rotate-45 transition-all duration-300"
           href="https://github.com/efive-dev"
           target="_blank"
           alt="My github"
@@ -109,7 +107,7 @@
     <div class="text-white pt-3 text-left text-2xl">
       <h2 class="font-extrabold text-3xl">Closing thoughts</h2>
       <p class="pt-2">
-        So that covers the more technical side of things!<br />
+        But there's more of me than just code!<br />
         Outside of <b>programming</b> and computer science, I'm also passionate
         about a few creative and active hobbies. I love to <i>skateboard</i> as
         it keeps me moving, clears my mind, and challenges me to improve, much
