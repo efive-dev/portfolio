@@ -149,7 +149,7 @@
             <p>
               Styled with a minimalist aesthetic and built for performance, the
               site emphasizes clarity and structure. Whether you're viewing
-              detailed project pages or learning more me, the design stays out
+              detailed project pages or learning more about me, the design stays out
               of the way letting the work speak for itself.
             </p>
           </div>
