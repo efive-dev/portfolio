@@ -9,7 +9,7 @@ import FlowingMenu from "../components/FlowingMenu.vue";
 
 const items = [
   {
-    link: "/about-me/contents/",
+    link: "contents/",
     text: "About Me",
     image: "/about-me.png",
   },
