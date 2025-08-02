@@ -156,13 +156,13 @@ import SplitText from "../components/SplitText.vue";
 import BounceCards from "../components/BounceCards.vue";
 
 const images = [
-  "/go-original-wordmark.svg",
-  "/javascript-original.svg",
-  "/typescript-original.svg",
-  "/vuejs-original.svg",
-  "/tailwindcss-original.svg",
-  "/java-original.svg",
-  "/python-original.svg",
+  "/icons/go-original-wordmark.svg",
+  "/icons/javascript-original.svg",
+  "/icons/typescript-original.svg",
+  "/icons/vuejs-original.svg",
+  "/icons/tailwindcss-original.svg",
+  "/icons/java-original.svg",
+  "/icons/python-original.svg",
 ];
 
 const transformStyles = [
