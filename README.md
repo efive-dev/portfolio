@@ -10,4 +10,4 @@ If you want to locally play with it you can clone the directory and run:
 npm run dev
 ```
 
-Otherwise you can checkout the web site at the following [link](https://portfolio-two-ecru-43.vercel.app/).
+Otherwise you can checkout the web site at the following [link](https://efive-dev.vercel.app/).
