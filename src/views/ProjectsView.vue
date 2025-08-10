@@ -149,12 +149,56 @@
             <p>
               Styled with a minimalist aesthetic and built for performance, the
               site emphasizes clarity and structure. Whether you're viewing
-              detailed project pages or learning more about me, the design stays out
-              of the way letting the work speak for itself.
+              detailed project pages or learning more about me, the design stays
+              out of the way letting the work speak for itself.
             </p>
           </div>
           <div class="flex-1">
             <img src="/icons/vuejs-original.svg" alt="vue logo" class="w-60" />
+          </div>
+        </div>
+      </ScrollStackItem>
+      <ScrollStackItem class="bg-white text-black text-2xl">
+        <div
+          class="flex flex-col md:flex-row items-start justify-center gap-20"
+        >
+          <div class="flex-3">
+            <h2 class="text-3xl font-extrabold">
+              <a
+                href="https://github.com/efive-dev/tempodoro"
+                target="_blank"
+                class="hover:underline"
+                >Tempodoro</a
+              >
+              and its
+              <a
+                href="https://github.com/efive-dev/tempodoro-tui"
+                target="_blank"
+                class="hover:underline"
+                >Tui</a
+              >:
+            </h2>
+            <p>
+              A modern Pomodoro productivity tool built with Java Spring Boot
+              and a secure REST API, designed to help you manage focus and break
+              sessions effortlessly. With robust JWT authentication and
+              customizable session settings, it keeps your workflow smooth and
+              secure.
+            </p>
+            <p>
+              Built for simplicity and flexibility, Tempodoro tracks your
+              session history with filtering options and integrates easily with
+              frontend clients or tools like the provided Python TUI. Its clean
+              API and reliable backend let you focus on what matter your
+              productivity.
+            </p>
+          </div>
+          <div class="flex-1">
+            <img
+              src="/icons/spring-original.svg"
+              alt="spring logo"
+              class="w-60"
+            />
           </div>
         </div>
       </ScrollStackItem>

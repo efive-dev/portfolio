@@ -55,7 +55,9 @@
               <li>
                 <b>Java</b>: the language I was formally taught at university.
                 It helped shape my understanding of object-oriented design and
-                strong typing.
+                strong typing. I also have experience with <i>Spring Boot</i>,
+                which has enhanced my skills in building robust, scalable web
+                applications.
               </li>
               <li>
                 <b>Python</b>: my go-to language for scripting, automation, and
@@ -122,10 +124,10 @@
     <div class="text-white pt-3 text-left text-2xl">
       <h2 class="font-extrabold text-3xl">Always Learning:</h2>
       <p class="pt-2">
-        I'm currently learning <b>Ruby on Rails</b> out of curiosity and
-        admiration for its "<i>convention over configuration</i>" approach. I'm
-        particularly enjoying its developer-friendly ecosystem and focus on
-        productivity.
+        I'm currently exploring Kotlin, drawn by its modern features and
+        seamless interoperability with Java. I appreciate its concise syntax and
+        strong support for functional programming, which help boost my
+        productivity and code safety.
       </p>
       <p class="pt-2">
         Beyond frameworks and languages, I'm also constantly working on
@@ -156,6 +158,7 @@ import SplitText from "../components/SplitText.vue";
 import BounceCards from "../components/BounceCards.vue";
 
 const images = [
+  "/icons/spring-original.svg",
   "/icons/go-original-wordmark.svg",
   "/icons/javascript-original.svg",
   "/icons/typescript-original.svg",
@@ -163,9 +166,11 @@ const images = [
   "/icons/tailwindcss-original.svg",
   "/icons/java-original.svg",
   "/icons/python-original.svg",
+  "/icons/kotlin-original.svg",
 ];
 
 const transformStyles = [
+  "rotate(-5deg) translate(-800px)",
   "rotate(3deg) translate(-600px)",
   "rotate(-1deg) translate(-400px)",
   "rotate(-4deg) translate(-200px)",
@@ -173,5 +178,6 @@ const transformStyles = [
   "rotate(-5deg) translate(200px)",
   "rotate(5deg) translate(400px)",
   "rotate(-5deg) translate(600px)",
+  "rotate(+5deg) translate(800px)",
 ];
 </script>
