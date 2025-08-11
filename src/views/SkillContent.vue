@@ -119,6 +119,18 @@
         :enable-hover="true"
       />
     </div>
+    <div class="flex justify-center">
+      <BounceCards
+        :images="images2"
+        :container-width="1200"
+        :container-height="300"
+        :animation-delay="1"
+        :animation-stagger="0.06"
+        ease-type="elastic.out(1, 0.8)"
+        :transform-styles="transformStyles2"
+        :enable-hover="true"
+      />
+    </div>
     >
 
     <div class="text-white pt-3 text-left text-2xl">
@@ -158,26 +170,30 @@ import SplitText from "../components/SplitText.vue";
 import BounceCards from "../components/BounceCards.vue";
 
 const images = [
-  "/icons/spring-original.svg",
   "/icons/go-original-wordmark.svg",
   "/icons/javascript-original.svg",
-  "/icons/typescript-original.svg",
   "/icons/vuejs-original.svg",
-  "/icons/tailwindcss-original.svg",
-  "/icons/java-original.svg",
+  "/icons/typescript-original.svg",
   "/icons/python-original.svg",
-  "/icons/kotlin-original.svg",
 ];
 
 const transformStyles = [
-  "rotate(-5deg) translate(-800px)",
-  "rotate(3deg) translate(-600px)",
-  "rotate(-1deg) translate(-400px)",
-  "rotate(-4deg) translate(-200px)",
-  "rotate(0deg) translate(0px)",
-  "rotate(-5deg) translate(200px)",
+  "rotate(-5deg) translate(-400px)",
+  "rotate(3deg) translate(-200px)",
+  "rotate(-1deg) translate(0px)",
+  "rotate(-4deg) translate(200px)",
   "rotate(5deg) translate(400px)",
-  "rotate(-5deg) translate(600px)",
-  "rotate(+5deg) translate(800px)",
+];
+
+const images2 = [
+  "/icons/java-original.svg",
+  "/icons/spring-original.svg",
+  "/icons/kotlin-original.svg",
+];
+
+const transformStyles2 = [
+  "rotate(3deg) translate(-200px)",
+  "rotate(-1deg) translate(0px)",
+  "rotate(-4deg) translate(200px)",
 ];
 </script>

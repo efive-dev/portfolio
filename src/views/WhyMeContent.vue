@@ -49,9 +49,9 @@
           <p class="ps-5">
             What sets me apart is my <b>curiosity</b>. I'm constantly exploring
             new <i>languages</i>, <i>tools</i>, and <i>ideas</i>. Recently, I've
-            been diving into <b>Ruby on Rails</b>, not out of necessity, but
-            because I'm genuinely interested in how
-            <i>different ecosystems</i> solve common problems.
+            been diving into <b>Kotlin</b>, not out of necessity, but because
+            I'm genuinely interested in how <i>different ecosystems</i> solve
+            common problems.
           </p>
 
           <h2 class="font-extrabold text-3xl mt-5">Team-Oriented Approach:</h2>
