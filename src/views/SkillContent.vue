@@ -16,7 +16,9 @@
             root-margin="-100px"
             text-align="left"
           />
-          <ul class="ml-auto mt-15">
+          <ul
+            class="ml-auto mt-15 border-white border-t-2 border-b-2 text-2xl p-2"
+          >
             <li>
               <a
                 class="text-white text-right font-extrabold hover:underline"
