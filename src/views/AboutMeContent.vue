@@ -5,7 +5,7 @@
         <div class="flex">
           <SplitText
             text="About Me!"
-            class-name="text-6xl md:text-9xl font-bold text-white"
+            class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
             :delay="300"
             :duration="0.6"
             ease="power3.out"
@@ -17,20 +17,20 @@
             text-align="left"
           />
           <ul
-            class="ml-auto mt-15 border-white border-t-2 border-b-2 text-2xl p-2"
+              class="ml-auto mt-15 border-white border-t-2 border-b-2 text-base sm:text-lg md:text-2xl p-2"
           >
             <li>
               <a
-                class="text-white text-right font-extrabold hover:underline"
-                href="/"
-                >Back to the homepage!</a
+                  class="text-white text-right font-extrabold hover:underline"
+                  href="/"
+              >Back to the homepage!</a
               >
             </li>
             <li>
               <a
-                class="text-white text-right font-extrabold hover:underline"
-                href="/about-me"
-                >Back to the About Me page!</a
+                  class="text-white text-right font-extrabold hover:underline"
+                  href="/about-me"
+              >Back to the About Me page!</a
               >
             </li>
           </ul>
