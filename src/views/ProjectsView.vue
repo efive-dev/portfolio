@@ -5,7 +5,7 @@
         <div class="flex-3">
           <div class="flex flex-col md:flex-row md:items-start">
             <SplitText
-                text="My skills"
+                text="Notable projects"
                 class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
                 :delay="300"
                 :duration="0.6"
