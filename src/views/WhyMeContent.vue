@@ -1,8 +1,8 @@
 <template>
-  <div class="p-10">
-    <div class="flex flex-col md:flex-row items-start gap-10">
+  <div class="p-6 md:p-10">
+    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
       <div class="flex-3">
-        <div class="flex">
+        <div class="flex flex-col md:flex-row md:items-start">
           <SplitText
               text="Why me?"
               class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"

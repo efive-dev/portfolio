@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-screen">
-    <div class="p-10">
-      <div class="flex flex-col md:flex-row items-start gap-10">
+    <div class="p-6 md:p-10">
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
         <div class="flex-3">
-          <div class="flex">
+          <div class="flex flex-col md:flex-row md:items-start">
             <SplitText
-                text="Notable Projects"
+                text="My skills"
                 class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
                 :delay="300"
                 :duration="0.6"
@@ -31,23 +31,22 @@
                 <a
                     class="text-white text-right font-extrabold hover:underline"
                     href="/about-me"
-                >About Me page!</a
+                >Back to the About Me page!</a
                 >
               </li>
               <li>
                 <a
                     class="text-white text-right font-extrabold hover:underline"
-                    href="https://github.com/efive-dev"
+                    href="https://github.com/efive-dev/efive-dev"
                     target="_blank"
-                >Check out my Github page!</a
-                >
+                >Check out my Github page!
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
     <!-- ScrollStack for medium and large screens -->
     <ScrollStack
         class="hidden md:block"

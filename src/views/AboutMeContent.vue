@@ -1,20 +1,20 @@
 <template>
-  <div class="p-10">
-    <div class="flex flex-col md:flex-row items-start gap-10">
+  <div class="p-6 md:p-10">
+    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
       <div class="flex-3">
-        <div class="flex">
+        <div class="flex flex-col md:flex-row md:items-start">
           <SplitText
-            text="About Me!"
-            class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
-            :delay="300"
-            :duration="0.6"
-            ease="power3.out"
-            split-type="chars"
-            :from="{ opacity: 0, y: 40 }"
-            :to="{ opacity: 1, y: 0 }"
-            :threshold="0.1"
-            root-margin="-100px"
-            text-align="left"
+              text="About me!"
+              class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
+              :delay="300"
+              :duration="0.6"
+              ease="power3.out"
+              split-type="chars"
+              :from="{ opacity: 0, y: 40 }"
+              :to="{ opacity: 1, y: 0 }"
+              :threshold="0.1"
+              root-margin="-100px"
+              text-align="left"
           />
           <ul
               class="ml-auto mt-15 border-white border-t-2 border-b-2 text-base sm:text-lg md:text-2xl p-2"
@@ -34,6 +34,7 @@
               >
             </li>
           </ul>
+
         </div>
         <div
           class="mt-6 text-white text-2xl flex-2 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
