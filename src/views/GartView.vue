@@ -41,20 +41,29 @@
 
     <div class="flex flex-col items-center gap-6 mt-6">
       <h1 class="underline font-extrabold text-4xl text-white mt-10">Grids:</h1>
-
-      <img
-          src="/gart/grid.png"
-          alt="grid_v1"
-          class="border-2 text-white"
-      >
-      <video
-          src="/gart/grid2.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-          class="border-2 text-white"
-      ></video>
+      <div>
+        <img
+            src="/gart/grid.png"
+            alt="grid_v1"
+            class="border-2 text-white"
+        >
+        <p class="text-white text-2xl text-right">
+          Made with <a class="hover:underline font-extrabold" href="https://openrndr.org/" target="_blank">OPENRNDR</a>
+        </p>
+      </div>
+      <div>
+        <video
+            src="/gart/grid2.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="border-2 text-white"
+        ></video>
+        <p class="text-white text-2xl text-right">
+          Made with <a class="hover:underline font-extrabold" href="https://openrndr.org/" target="_blank">OPENRNDR</a>
+        </p>
+      </div>
     </div>
   </div>
 </template>
