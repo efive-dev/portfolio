@@ -65,5 +65,16 @@ const items = [
       router.push("/projects");
     },
   },
+  {
+    icon: () =>
+        h("i", {
+          class: "pi pi-images",
+          style: { fontSize: "1.5rem", color: "white" },
+        }),
+    label: "Artworks",
+    onClick: () => {
+      router.push("/gart");
+    },
+  },
 ];
 </script>
