@@ -6,7 +6,7 @@
           <div class="flex flex-col md:flex-row md:items-start">
             <SplitText
                 text="Notable projects"
-                class-name="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white leading-tight"
+                class-name="text-3xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
                 :delay="300"
                 :duration="0.6"
                 ease="power3.out"
@@ -49,7 +49,7 @@
     </div>
     <!-- ScrollStack for medium and large screens -->
     <ScrollStack
-        class="hidden md:block"
+        class="hidden xl:block"
         :item-distance="120"
         :item-scale="0.05"
         :item-stack-distance="40"
@@ -209,7 +209,7 @@
     </ScrollStack>
 
     <!-- Simple paragraphs for small screens -->
-    <div class="block md:hidden px-5 pb-10">
+    <div class="block xl:hidden px-5 pb-10">
       <!-- Project 1 - Black background -->
       <div class="bg-black text-white p-6 mb-4 rounded-lg border-2">
         <h2 class="text-2xl font-extrabold mb-4">
