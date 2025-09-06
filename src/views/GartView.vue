@@ -64,6 +64,32 @@
           Made with <a class="hover:underline font-extrabold" href="https://openrndr.org/" target="_blank">OPENRNDR</a>
         </p>
       </div>
+      <div>
+        <video
+            src="/gart/grids_05.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="border-2 text-white"
+        ></video>
+        <p class="text-white text-2xl text-right">
+          Made with <a class="hover:underline font-extrabold" href="https://openrndr.org/" target="_blank">OPENRNDR</a>
+        </p>
+      </div>
+      <div>
+        <video
+            src="/gart/grids_04.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="border-2 text-white"
+        ></video>
+        <p class="text-white text-2xl text-right">
+          Made with <a class="hover:underline font-extrabold" href="https://openrndr.org/" target="_blank">OPENRNDR</a>
+        </p>
+      </div>
     </div>
   </div>
 </template>
