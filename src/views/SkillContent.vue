@@ -4,40 +4,39 @@
       <div class="flex-3">
         <div class="flex flex-col md:flex-row md:items-start">
           <SplitText
-              text="My skills"
-              class-name="text-3xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
-              :delay="300"
-              :duration="0.6"
-              ease="power3.out"
-              split-type="chars"
-              :from="{ opacity: 0, y: 40 }"
-              :to="{ opacity: 1, y: 0 }"
-              :threshold="0.1"
-              root-margin="-100px"
-              text-align="left"
+            text="My skills"
+            class-name="text-3xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
+            :delay="300"
+            :duration="0.6"
+            ease="power3.out"
+            split-type="chars"
+            :from="{ opacity: 0, y: 40 }"
+            :to="{ opacity: 1, y: 0 }"
+            :threshold="0.1"
+            root-margin="-100px"
+            text-align="left"
           />
           <ul
-              class="ml-auto mt-15 border-white border-t-2 border-b-2 text-base sm:text-lg md:text-2xl p-2"
+            class="ml-auto mt-15 border-white border-t-2 border-b-2 text-base sm:text-lg md:text-2xl p-2"
           >
             <li>
               <a
-                  class="text-white text-right font-extrabold hover:underline"
-                  href="/"
-              >Back to the homepage!</a
+                class="text-white text-right font-extrabold hover:underline"
+                href="/"
+                >Back to the homepage!</a
               >
             </li>
             <li>
               <a
-                  class="text-white text-right font-extrabold hover:underline"
-                  href="/about-me"
-              >Back to the About Me page!</a
+                class="text-white text-right font-extrabold hover:underline"
+                href="/about-me"
+                >Back to the About Me page!</a
               >
             </li>
           </ul>
-
         </div>
         <div
-            class="mt-6 text-white text-2xl flex-2 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
+          class="mt-6 text-white text-2xl flex-2 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
         >
           Over the years I have developed a growing toolkit of
           <b>programming languages</b> and <b>technologies</b> that I use to
@@ -99,39 +98,45 @@
 
       <div class="flex-1 text-center">
         <img
-            src="/skills-content.png"
-            class="rounded-2xl object-cover w-full"
+          src="/skills-content.png"
+          class="rounded-2xl object-cover w-full"
         />
         <a
-            class="pi pi-github text-white text-7xl pt-10 hover:drop-shadow-lg hover:text-blue-200 hover:rotate-45 transition-all duration-300"
-            href="https://github.com/efive-dev"
-            target="_blank"
-            alt="My github"
+          class="pi pi-github text-white text-7xl p-10 hover:drop-shadow-lg hover:text-blue-200 hover:rotate-45 transition-all duration-300"
+          href="https://github.com/efive-dev"
+          target="_blank"
+          alt="My github"
+        ></a>
+        <a
+          class="pi pi-linkedin text-white text-7xl p-10 hover:drop-shadow-lg hover:text-blue-200 hover:rotate-45 transition-all duration-300"
+          href="https://www.linkedin.com/in/edoardo-quinto/"
+          target="_blank"
+          alt="My Linkedin"
         ></a>
       </div>
     </div>
     <div class="hidden sm:flex justify-center">
       <BounceCards
-          :images="images"
-          :container-width="1200"
-          :container-height="300"
-          :animation-delay="1"
-          :animation-stagger="0.06"
-          ease-type="elastic.out(1, 0.8)"
-          :transform-styles="transformStyles"
-          :enable-hover="true"
+        :images="images"
+        :container-width="1200"
+        :container-height="300"
+        :animation-delay="1"
+        :animation-stagger="0.06"
+        ease-type="elastic.out(1, 0.8)"
+        :transform-styles="transformStyles"
+        :enable-hover="true"
       />
     </div>
     <div class="hidden sm:flex justify-center">
       <BounceCards
-          :images="images2"
-          :container-width="1200"
-          :container-height="300"
-          :animation-delay="1"
-          :animation-stagger="0.06"
-          ease-type="elastic.out(1, 0.8)"
-          :transform-styles="transformStyles2"
-          :enable-hover="true"
+        :images="images2"
+        :container-width="1200"
+        :container-height="300"
+        :animation-delay="1"
+        :animation-stagger="0.06"
+        ease-type="elastic.out(1, 0.8)"
+        :transform-styles="transformStyles2"
+        :enable-hover="true"
       />
     </div>
     >
@@ -139,10 +144,9 @@
     <div class="text-white pt-3 text-left text-2xl">
       <h2 class="font-extrabold text-3xl">Always Learning:</h2>
       <p class="pt-2">
-        I'm currently exploring Kotlin, drawn by its modern features and
-        seamless interoperability with Java. I appreciate its concise syntax and
-        strong support for functional programming, which help boost my
-        productivity and code safety.
+        I'm currently exploring Kotlin and Rust, drawn by their modern features.
+        I appreciate their concise syntax and strong support for functional
+        programming, which help boost my productivity and code safety.
       </p>
       <p class="pt-2">
         Beyond frameworks and languages, I'm also constantly working on
