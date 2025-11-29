@@ -1,13 +1,42 @@
-# Personal website
+# vue-project
 
-A modern portfolio website built with Vue and Vue Router, designed to showcase projects and personal information through a clean and intuitive interface. With smooth client-side routing and responsive design.
+This template should help get you started developing with Vue 3 in Vite.
 
-Styled with a minimalist aesthetic and built for performance, the site emphasizes clarity and structure. Whether you're viewing detailed project pages or learning more about me, the design stays out of the way letting the work speak for itself.
+## Recommended IDE Setup
 
-If you want to locally play with it you can clone the directory and run:
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-```bash
+## Recommended Browser Setup
+
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
 npm run dev
 ```
 
-Otherwise you can checkout the web site at the following [link](https://efive-dev.vercel.app/).
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
