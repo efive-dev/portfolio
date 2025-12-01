@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.11",
     "@types/three": "^0.178.1",
+    "front-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "lenis": "^1.3.8",
+    "marked": "^17.0.1",
     "motion-v": "^1.6.1",
     "tailwindcss": "^4.1.11",
     "three": "^0.178.0",

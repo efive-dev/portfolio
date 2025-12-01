@@ -7,6 +7,8 @@ import AboutMeContent from "../views/AboutMeContent.vue";
 import WhyMeContent from "../views/WhyMeContent.vue";
 import SkillContent from "../views/SkillContent.vue";
 import GartView from "../views/GartView.vue";
+import Blog from "../views/Blog.vue";
+import Post from "../views/Post.vue";
 
 const routes = [
     {path: "/", component: HomeView},
@@ -16,6 +18,8 @@ const routes = [
     {path: "/about-me/why-me", component: WhyMeContent},
     {path: "/about-me/skills", component: SkillContent},
     {path: "/gart", component: GartView},
+    {path: "/blog", component: Blog},
+    {path: "/blog/:slug", component: Post}
 ];
 
 const router = createRouter({
