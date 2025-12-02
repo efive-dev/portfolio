@@ -6,7 +6,7 @@
           <div class="flex flex-col md:flex-row md:items-start">
             <SplitText
                 text="Notable projects"
-                class-name="text-3xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
+                class-name="text-5xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
                 :delay="300"
                 :duration="0.6"
                 ease="power3.out"
