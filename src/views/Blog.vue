@@ -96,7 +96,7 @@ const filteredPosts = computed(() => {
       <div class="flex-3">
         <div class="flex flex-col md:flex-row md:items-start">
           <h1
-            class="text-3xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
+            class="text-5xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
           >
             Blog
           </h1>
