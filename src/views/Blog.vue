@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from "vue";
 import { marked } from "marked";
 import { useRouter } from "vue-router";
+import SplitText from "../components/SplitText.vue";
 
 const posts = ref([]);
 const filterTag = ref("all");
@@ -25,7 +26,6 @@ onMounted(() => {
       let tagsList = [];
 
       lines.forEach((line) => {
-        // Check if line is a tag item (starts with -)
         if (line.trim().startsWith("-") && currentKey === "tags") {
           const tag = line.trim().substring(1).trim();
           if (tag) {
@@ -33,14 +33,12 @@ onMounted(() => {
             tagSet.add(tag);
           }
         } else {
-          // Regular key: value line
           const [key, ...rest] = line.split(":");
           if (key && rest.length > 0) {
             currentKey = key.trim();
             let value = rest.join(":").trim();
 
             if (currentKey === "tags") {
-              // If tags are inline like "tags: [tag1, tag2]" or "tags: tag1, tag2"
               if (value && !value.startsWith("-")) {
                 value = value
                   .replace(/[\[\]]/g, "")
@@ -50,7 +48,6 @@ onMounted(() => {
                 tagsList = value;
                 value.forEach((t) => tagSet.add(t));
               } else {
-                // YAML array format, will be populated by subsequent lines
                 tagsList = [];
               }
             }
@@ -62,7 +59,6 @@ onMounted(() => {
         }
       });
 
-      // Set tags array in meta
       if (tagsList.length > 0) {
         meta.tags = tagsList;
       }
@@ -74,13 +70,11 @@ onMounted(() => {
     posts.value.push({ slug, meta, html: marked(content) });
   }
 
-  // Sort posts by date (newest first)
   posts.value.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
 
   tags.value = ["all", ...Array.from(tagSet)];
 });
 
-// Filtered posts - using computed for better reactivity
 const filteredPosts = computed(() => {
   if (filterTag.value === "all") return posts.value;
   return posts.value.filter((p) => {
@@ -93,26 +87,37 @@ const filteredPosts = computed(() => {
 <template>
   <div class="p-6 md:p-10">
     <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
-      <div class="flex-3">
+      <!-- Main content wrapper -->
+      <div class="w-full md:flex-1">
+        <!-- Header row -->
         <div class="flex flex-col md:flex-row md:items-start">
-          <h1
-            class="text-5xl sm:text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
-          >
-            Blog
-          </h1>
+          <SplitText
+            text="Artworks"
+            class-name="text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
+            :delay="300"
+            :duration="0.6"
+            ease="power3.out"
+            split-type="chars"
+            :from="{ opacity: 0, y: 40 }"
+            :to="{ opacity: 1, y: 0 }"
+            :threshold="0.1"
+            root-margin="-100px"
+            text-align="left"
+          />
+
           <ul
-            class="ml-auto mt-15 border-white border-t-2 border-b-2 text-base sm:text-lg md:text-2xl p-2"
+            class="ml-auto mt-6 md:mt-0 border-white border-t-2 border-b-2 text-lg md:text-2xl p-2"
           >
             <li>
-              <a
-                class="text-white text-right font-extrabold hover:underline"
-                href="/"
-                >Back to the homepage!</a
-              >
+              <a class="text-white font-extrabold hover:underline" href="/">
+                Back to the homepage!
+              </a>
             </li>
           </ul>
         </div>
-        <div class="mt-4 mb-4 flex flex-wrap gap-4">
+
+        <!-- Tag Filter Buttons -->
+        <div class="mt-4 mb-4 flex flex-wrap gap-3">
           <button
             v-for="tag in tags"
             :key="tag"
@@ -129,7 +134,7 @@ const filteredPosts = computed(() => {
         </div>
 
         <div
-          class="mt-6 text-white text-2xl flex-2 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
+          class="mt-6 text-white text-2xl w-full md:flex-1 border-e-2 border-t-2 border-b-2 pb-2 pt-2 pe-2"
         >
           <ul class="list-disc ps-5 space-y-2">
             <li v-for="post in filteredPosts" :key="post.slug">
@@ -139,9 +144,12 @@ const filteredPosts = computed(() => {
               >
                 {{ post.meta.title }}
               </router-link>
-              <small class="text-gray-400 ml-2">{{ post.meta.date }}</small>
 
-              <!-- Post tags -->
+              <small class="text-gray-400 ml-2">
+                {{ post.meta.date }}
+              </small>
+
+              <!-- Tags under each post -->
               <div class="mt-1 flex gap-2 flex-wrap">
                 <span
                   v-for="tag in post.meta.tags || []"
