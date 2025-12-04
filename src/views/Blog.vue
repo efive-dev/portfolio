@@ -92,7 +92,7 @@ const filteredPosts = computed(() => {
         <!-- Header row -->
         <div class="flex flex-col md:flex-row md:items-start">
           <SplitText
-            text="Artworks"
+            text="Blog"
             class-name="text-5xl md:text-5xl xl:text-9xl font-bold text-white leading-tight"
             :delay="300"
             :duration="0.6"
