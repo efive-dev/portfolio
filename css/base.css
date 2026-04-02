@@ -1,0 +1,87 @@
+/* ══════════════════════════════════════════════════════════════
+   BASE — custom properties, reset, shared utilities
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── THEMES ── */
+:root {
+  --bg:       #0a0a0a;
+  --fg:       #d4d0c8;
+  --fg-dim:   #2e2e2e;
+  --fg-mid:   #5a5a5a;
+  --fg-hi:    #ffffff;
+  --accent:   #c8f0a0;
+  --mono:     'DM Mono', monospace;
+  --pad:      32px;
+  --topbar-h: 56px;
+  --status-h: 28px;
+}
+
+[data-theme="light"] {
+  --bg:     #f2efea;
+  --fg:     #1a1a1a;
+  --fg-dim: #d0cdc8;
+  --fg-mid: #888;
+  --fg-hi:  #000;
+  --accent: #2a7a00;
+}
+
+[data-theme="amber"] {
+  --bg:     #0e0900;
+  --fg:     #d4900a;
+  --fg-dim: #2a1e00;
+  --fg-mid: #7a5000;
+  --fg-hi:  #ffcc44;
+  --accent: #ffcc44;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  cursor: crosshair;
+  transition: background 0.5s, color 0.5s;
+  user-select: none;
+}
+
+button, a { cursor: crosshair; }
+
+/* ── SHARED UTILITIES ── */
+
+/* section header with rule line */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.section-rule-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  white-space: nowrap;
+}
+.section-rule-line {
+  flex: 1;
+  height: 1px;
+  background: var(--fg-dim);
+}
+
+/* async loading indicator */
+.loading-msg {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--fg-mid);
+  padding: 40px 0;
+  text-transform: uppercase;
+}
+
+/* blink cursor */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
