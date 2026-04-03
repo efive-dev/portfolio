@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!--
+    Python logo — two interlocked snake bodies.
+    Upper snake (head upper-left): arcs across the top half.
+    Lower snake (head lower-right): arcs across the bottom half.
+    They share horizontal midlines and interlock at center.
+  -->
+
+  <!-- Upper snake body -->
+  <path d="M 12,11.5
+           L 5.5,11.5
+           C 3.5,11.5 2,10 2,8
+           L 2,6.5
+           C 2,4 4,2 7.5,2
+           L 12,2
+           C 14.5,2 15,3 15,4.5
+           L 15,7
+           C 15,8.5 14,9.5 12,9.5
+           L 9,9.5
+           C 7.5,9.5 6.5,10.2 6.5,11.5"
+        stroke="currentColor" stroke-width="1.3" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Lower snake body (mirror of upper) -->
+  <path d="M 12,12.5
+           L 18.5,12.5
+           C 20.5,12.5 22,14 22,16
+           L 22,17.5
+           C 22,20 20,22 16.5,22
+           L 12,22
+           C 9.5,22 9,21 9,19.5
+           L 9,17
+           C 9,15.5 10,14.5 12,14.5
+           L 15,14.5
+           C 16.5,14.5 17.5,13.8 17.5,12.5"
+        stroke="currentColor" stroke-width="1.3" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Upper snake eye -->
+  <circle cx="10" cy="5.2" r="1" fill="currentColor"/>
+
+  <!-- Lower snake eye -->
+  <circle cx="14" cy="18.8" r="1" fill="currentColor"/>
+</svg>

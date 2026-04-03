@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Hexagonal badge (C language logo shape) -->
+  <polygon points="12,2 20.66,7 20.66,17 12,22 3.34,17 3.34,7"
+           stroke="currentColor" stroke-width="1.1" fill="none"
+           stroke-linejoin="round"/>
+  <!-- Bold C arc: opens to the right, gap at ~40° -->
+  <path d="M 15.54,7.79 A 5.5,5.5 0 1 0 15.54,16.21"
+        stroke="currentColor" stroke-width="2" fill="none"
+        stroke-linecap="round"/>
+</svg>

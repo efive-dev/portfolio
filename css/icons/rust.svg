@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!--
+    Rust gear logo — 8 teeth, computed at center (12,12).
+    Outer R=10.5, inner (valley) R=9, tooth half-width ±6°, valley 15°→30°.
+    Points order: outer-L, outer-R, inner-L, inner-R  (×8 teeth)
+  -->
+  <polygon
+    points="
+      10.66,1.08  13.34,1.08  14.33,3.31  16.50,4.21
+      18.77,3.33  20.67,5.23  19.79,7.50  20.69,9.67
+      22.92,10.66 22.92,13.34 20.69,14.33 19.79,16.50
+      20.67,18.77 18.77,20.67 16.50,19.79 14.33,20.69
+      13.34,22.92 10.66,22.92  9.67,20.69  7.50,19.79
+       5.33,20.67  3.33,18.77  4.21,16.50  3.31,14.33
+       1.08,13.34  1.08,10.66  3.31,9.67   4.21,7.50
+       3.33,5.23   5.33,3.33   7.50,4.21   9.67,3.31"
+    stroke="currentColor" stroke-width="0.4"
+    stroke-linejoin="round" fill="none"/>
+
+  <!-- Hub ring -->
+  <circle cx="12" cy="12" r="4.2"
+          stroke="currentColor" stroke-width="0.9" fill="none"/>
+
+  <!-- R letterform — fits inside hub, stroke-based -->
+  <path d="M 9.8,15.8 L 9.8,8.2
+           L 12.6,8.2 Q 14.8,8.2 14.8,10.1 Q 14.8,12 12.6,12 L 9.8,12
+           M 12.2,12 L 14.8,15.8"
+        stroke="currentColor" stroke-width="1.15" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

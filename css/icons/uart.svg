@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!--
+    UART frame:  IDLE(high) | START(low) | D0..D4 | STOP(high) | IDLE(high)
+    y=7 = logic HIGH,  y=17 = logic LOW
+  -->
+
+  <!-- Idle high -->
+  <line x1="1"  y1="7"  x2="4"  y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Falling edge: start bit -->
+  <line x1="4"  y1="7"  x2="4"  y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Start bit (low) -->
+  <line x1="4"  y1="17" x2="7"  y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- D0: high -->
+  <line x1="7"  y1="17" x2="7"  y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="7"  y1="7"  x2="10" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- D1: low -->
+  <line x1="10" y1="7"  x2="10" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="10" y1="17" x2="13" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- D2: high -->
+  <line x1="13" y1="17" x2="13" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="13" y1="7"  x2="16" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- D3: high -->
+  <line x1="16" y1="7"  x2="19" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Stop bit: rising edge then high -->
+  <line x1="19" y1="7"  x2="19" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="19" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="20" y1="17" x2="20" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="20" y1="7"  x2="23" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

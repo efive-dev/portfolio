@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!--
+    CMake logo — three nested C-shaped arcs, each at a different radius.
+    The official logo uses red/green/blue concentric arcs. Monochrome here.
+    All arcs open to the right (gap at ≈40°), center (12,12).
+  -->
+
+  <!-- Outer arc, r≈9.5 -->
+  <path d="M 19.27,5.73 A 9.5,9.5 0 1 0 19.27,18.27"
+        stroke="currentColor" stroke-width="1.5" fill="none"
+        stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Middle arc, r≈6.5 -->
+  <path d="M 16.56,7.57 A 6.5,6.5 0 1 0 16.56,16.43"
+        stroke="currentColor" stroke-width="1.5" fill="none"
+        stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Inner arc, r≈3.5 -->
+  <path d="M 14.47,9.41 A 3.5,3.5 0 1 0 14.47,14.59"
+        stroke="currentColor" stroke-width="1.5" fill="none"
+        stroke-linecap="round" opacity="0.4"/>
+</svg>
