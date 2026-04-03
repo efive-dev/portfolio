@@ -1,0 +1,80 @@
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — tablet & mobile breakpoints
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── TABLET (≤ 900px) ── */
+@media (max-width: 900px) {
+  :root { --pad: 24px; }
+
+  /* swap desktop nav for hamburger */
+  .nav-center    { display: none; }
+  .theme-toggles { display: none; }   /* moved into mobile nav drawer */
+  .hamburger     { display: flex; }
+  /* .mobile-nav is always display:flex; visibility controlled by JS + layout.css */
+
+  /* single-column home grid */
+  .home-grid { grid-template-columns: 1fr; }
+  .home-cell                        { border-right: none !important; border-bottom: 1px solid var(--fg-dim) !important; }
+  .home-cell:last-child             { border-bottom: none !important; }
+
+  /* stack info cols */
+  .info-two-col { grid-template-columns: 1fr; }
+  .info-col                { border-right: none; border-bottom: 1px solid var(--fg-dim); }
+  .info-col:last-child     { border-bottom: none; }
+
+  /* stack contact links */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .contact-item            { border-right: none; border-bottom: 1px solid var(--fg-dim); }
+  .contact-item:last-child { border-bottom: none; }
+
+  /* smaller art grid */
+  .art-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+  /* hide decorative elements */
+  .big-label { display: none; }
+}
+
+/* ── MOBILE (≤ 600px) ── */
+@media (max-width: 600px) {
+  :root {
+    --pad:      16px;
+    --topbar-h: 50px;
+  }
+
+  .logo { font-size: 10px; }
+
+  /* tighter home cells */
+  .home-cell { padding: 24px 20px; }
+
+  /* project list: collapse year into body, keep num */
+  .project-entry {
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+  }
+  .project-year { display: none; }
+
+  /* blog header: stack title/date */
+  .blog-entry-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* 2-col art grid on small phones */
+  .art-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* contact page: don't try to center-vertically on small screens */
+  #page-contact {
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+
+  /* hide clock in status bar */
+  #status-right { display: none; }
+
+  /* art overlay: less padding */
+  #art-overlay { padding: 50px var(--pad) 24px; }
+  .art-overlay-img { max-height: 50vh; }
+}
