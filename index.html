@@ -1,395 +1,334 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>efive — embedded dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
 
-  <!-- ── SVG SPRITE ── filled dynamically by js/icons.js -->
-  <svg id="icon-sprite" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"></svg>
+<!-- ── SVG SPRITE ── filled dynamically by js/icons.js -->
+<svg id="icon-sprite" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"></svg>
 
-  <!-- Animated ASCII background -->
-  <div id="ascii-bg"><canvas id="ascii-canvas"></canvas></div>
+<!-- Animated ASCII background -->
+<div id="ascii-bg"><canvas id="ascii-canvas"></canvas></div>
 
-  <!-- Blog post slide-in overlay -->
-  <div id="post-overlay" role="dialog" aria-modal="true" aria-label="Blog post">
-    <div class="overlay-topbar">
-      <button class="post-back" onclick="Blog.closePost()">← back</button>
-      <div id="post-overlay-meta"></div>
+<!-- Blog post slide-in overlay -->
+<div id="post-overlay" role="dialog" aria-modal="true" aria-label="Blog post">
+  <div class="overlay-topbar">
+    <button class="post-back" onclick="Blog.closePost()">← back</button>
+    <div id="post-overlay-meta"></div>
+  </div>
+  <div id="post-content"></div>
+</div>
+
+<!-- Art lightbox overlay -->
+<div id="art-overlay" role="dialog" aria-modal="true" aria-label="Artwork">
+  <button class="overlay-close" onclick="Art.closeArtwork()">× close</button>
+  <div id="art-overlay-content"></div>
+</div>
+
+<!-- Mobile nav backdrop -->
+<div id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
+
+<div id="app">
+
+  <!-- ── TOP BAR ── -->
+  <header id="topbar">
+    <span class="logo"><em>_</em>efive.dev</span>
+
+    <nav class="nav-center" id="desktop-nav" aria-label="Main navigation">
+      <button class="nav-btn active" onclick="showPage('home', this)">home</button>
+      <button class="nav-btn" onclick="showPage('projects', this)">projects</button>
+      <button class="nav-btn" onclick="showPage('blog', this)">blog</button>
+      <button class="nav-btn" onclick="showPage('art', this)">art</button>
+      <button class="nav-btn" onclick="showPage('info', this)">info</button>
+      <button class="nav-btn" onclick="showPage('contact', this)">contact</button>
+    </nav>
+
+    <div class="nav-right">
+      <div class="theme-toggles">
+        <button class="theme-toggle active" onclick="setTheme('dark', this)">dark</button>
+        <button class="theme-toggle" onclick="setTheme('light', this)">light</button>
+        <button class="theme-toggle" onclick="setTheme('amber', this)">amber</button>
+      </div>
+      <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()"
+              aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div id="post-content"></div>
-  </div>
+  </header>
 
-  <!-- Art lightbox overlay -->
-  <div id="art-overlay" role="dialog" aria-modal="true" aria-label="Artwork">
-    <button class="overlay-close" onclick="Art.closeArtwork()">× close</button>
-    <div id="art-overlay-content"></div>
-  </div>
+  <!-- ── CONTENT ── -->
+  <div id="content">
 
-  <!-- Mobile nav backdrop -->
-  <div id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
-
-  <div id="app">
-
-    <!-- ── TOP BAR ── -->
-    <header id="topbar">
-      <span class="logo"><em>_</em>efive.dev</span>
-
-      <nav class="nav-center" id="desktop-nav" aria-label="Main navigation">
-        <button class="nav-btn active" onclick="showPage('home', this)">home</button>
-        <button class="nav-btn" onclick="showPage('projects', this)">projects</button>
-        <button class="nav-btn" onclick="showPage('blog', this)">blog</button>
-        <button class="nav-btn" onclick="showPage('art', this)">art</button>
-        <button class="nav-btn" onclick="showPage('info', this)">info</button>
-        <button class="nav-btn" onclick="showPage('contact', this)">contact</button>
-      </nav>
-
-      <div class="nav-right">
-        <div class="theme-toggles">
-          <button class="theme-toggle active" onclick="setTheme('dark', this)">dark</button>
-          <button class="theme-toggle" onclick="setTheme('light', this)">light</button>
-          <button class="theme-toggle" onclick="setTheme('amber', this)">amber</button>
-        </div>
-        <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Open menu"
-          aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+    <!-- HOME -->
+    <div class="page active" id="page-home">
+      <div class="home-hero">
+        <div class="home-name">efive</div>
+        <div class="home-sub">embedded systems · firmware · low-level</div>
       </div>
-    </header>
-
-    <!-- ── CONTENT ── -->
-    <div id="content">
-
-      <!-- HOME -->
-      <div class="page active" id="page-home">
-        <div class="home-hero">
-          <div class="home-name">efive</div>
-          <div class="home-sub">embedded systems · firmware · low-level</div>
+      <div class="home-grid">
+        <div class="home-cell">
+          <div class="home-cell-label">current status</div>
+          <div class="home-cell-value"><span class="hl">●</span> open to projects</div>
         </div>
-        <div class="home-grid">
-          <div class="home-cell">
-            <div class="home-cell-label">current status</div>
-            <div class="home-cell-value"><span class="hl">●</span> open to projects</div>
-          </div>
-          <div class="home-cell">
-            <div class="home-cell-label">location</div>
-            <div class="home-cell-value">somewhere on the internet</div>
-          </div>
-          <div class="home-cell">
-            <div class="home-cell-label">primary stack</div>
-            <div class="home-cell-value">c · arm · rtos</div>
-          </div>
-          <div class="home-cell">
-            <div class="home-cell-label">focus</div>
-            <div class="home-cell-value">firmware · hardware-software interface</div>
-          </div>
+        <div class="home-cell">
+          <div class="home-cell-label">location</div>
+          <div class="home-cell-value">somewhere on the internet</div>
+        </div>
+        <div class="home-cell">
+          <div class="home-cell-label">primary stack</div>
+          <div class="home-cell-value">c · arm · rtos</div>
+        </div>
+        <div class="home-cell">
+          <div class="home-cell-label">focus</div>
+          <div class="home-cell-value">firmware · hardware-software interface</div>
         </div>
       </div>
-
-      <!-- PROJECTS -->
-      <div class="page" id="page-projects">
-        <div class="section-rule">
-          <span class="section-rule-label">selected work</span>
-          <div class="section-rule-line"></div>
-        </div>
-
-        <ul class="project-list">
-
-          <li class="project-entry">
-            <span class="project-num">01</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  rtos scheduler <span class="project-tag">firmware</span>
-                </a>
-              </div>
-              <p class="project-summary">preemptive priority-based task scheduler built from scratch on Cortex-M4.
-                context switching, tick timer, and basic IPC via semaphores.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="c"><svg class="tech-icon">
-                    <use href="#icon-c" />
-                  </svg>C</span>
-                <span class="tech-chip" data-tech="arm"><svg class="tech-icon">
-                    <use href="#icon-arm" />
-                  </svg>ARM</span>
-                <span class="tech-chip" data-tech="rtos"><svg class="tech-icon">
-                    <use href="#icon-rtos" />
-                  </svg>RTOS</span>
-                <span class="tech-chip" data-tech="asm"><svg class="tech-icon">
-                    <use href="#icon-asm" />
-                  </svg>ASM</span>
-              </div>
-            </div>
-            <span class="project-year">2024</span>
-          </li>
-
-          <li class="project-entry">
-            <span class="project-num">02</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  can bus monitor <span class="project-tag">embedded</span>
-                </a>
-              </div>
-              <p class="project-summary">USB-connected CAN sniffer with a Python host tool for real-time frame decoding,
-                filtering by ID mask, and CSV logging.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="c"><svg class="tech-icon">
-                    <use href="#icon-c" />
-                  </svg>C</span>
-                <span class="tech-chip" data-tech="can"><svg class="tech-icon">
-                    <use href="#icon-can" />
-                  </svg>CAN</span>
-                <span class="tech-chip" data-tech="python"><svg class="tech-icon">
-                    <use href="#icon-python" />
-                  </svg>Python</span>
-                <span class="tech-chip" data-tech="uart"><svg class="tech-icon">
-                    <use href="#icon-uart" />
-                  </svg>UART</span>
-              </div>
-            </div>
-            <span class="project-year">2024</span>
-          </li>
-
-          <li class="project-entry">
-            <span class="project-num">03</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  bootloader prototype <span class="project-tag">low-level</span>
-                </a>
-              </div>
-              <p class="project-summary">bare-metal bootloader with UART-based firmware update, CRC32 integrity check,
-                and fallback to last-known-good image on failure.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="c"><svg class="tech-icon">
-                    <use href="#icon-c" />
-                  </svg>C</span>
-                <span class="tech-chip" data-tech="arm"><svg class="tech-icon">
-                    <use href="#icon-arm" />
-                  </svg>ARM</span>
-                <span class="tech-chip" data-tech="uart"><svg class="tech-icon">
-                    <use href="#icon-uart" />
-                  </svg>UART</span>
-                <span class="tech-chip" data-tech="flash"><svg class="tech-icon">
-                    <use href="#icon-flash" />
-                  </svg>Flash</span>
-              </div>
-            </div>
-            <span class="project-year">2023</span>
-          </li>
-
-          <li class="project-entry">
-            <span class="project-num">04</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  sensor fusion library <span class="project-tag">c++</span>
-                </a>
-              </div>
-              <p class="project-summary">complementary + Kalman filter library for IMU data fusion. header-only, no heap
-                allocation, tested on STM32 and nRF52.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="cpp"><svg class="tech-icon">
-                    <use href="#icon-cpp" />
-                  </svg>C++</span>
-                <span class="tech-chip" data-tech="spi"><svg class="tech-icon">
-                    <use href="#icon-spi" />
-                  </svg>SPI</span>
-                <span class="tech-chip" data-tech="i2c"><svg class="tech-icon">
-                    <use href="#icon-i2c" />
-                  </svg>I²C</span>
-                <span class="tech-chip" data-tech="cmake"><svg class="tech-icon">
-                    <use href="#icon-cmake" />
-                  </svg>CMake</span>
-                <span class="tech-chip" data-tech="rust"><svg class="tech-icon">
-                    <use href="#icon-rust" />
-                  </svg>Rust</span>
-              </div>
-            </div>
-            <span class="project-year">2023</span>
-          </li>
-
-          <li class="project-entry">
-            <span class="project-num">05</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  spi / i2c driver stack <span class="project-tag">drivers</span>
-                </a>
-              </div>
-              <p class="project-summary">interrupt-driven, DMA-capable peripheral driver layer for STM32H7. ring-buffer
-                TX/RX, configurable timeouts, multi-device bus arbitration.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="c"><svg class="tech-icon">
-                    <use href="#icon-c" />
-                  </svg>C</span>
-                <span class="tech-chip" data-tech="spi"><svg class="tech-icon">
-                    <use href="#icon-spi" />
-                  </svg>SPI</span>
-                <span class="tech-chip" data-tech="i2c"><svg class="tech-icon">
-                    <use href="#icon-i2c" />
-                  </svg>I²C</span>
-                <span class="tech-chip" data-tech="arm"><svg class="tech-icon">
-                    <use href="#icon-arm" />
-                  </svg>ARM</span>
-              </div>
-            </div>
-            <span class="project-year">2023</span>
-          </li>
-
-          <li class="project-entry">
-            <span class="project-num">06</span>
-            <div class="project-body">
-              <div class="project-top">
-                <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
-                  logic analyzer tool <span class="project-tag">tooling</span>
-                </a>
-              </div>
-              <p class="project-summary">CLI tool that parses raw 8-channel LA captures and reconstructs SPI, I²C, and
-                UART frames with timing annotations.</p>
-              <div class="project-tech">
-                <span class="tech-chip" data-tech="python"><svg class="tech-icon">
-                    <use href="#icon-python" />
-                  </svg>Python</span>
-                <span class="tech-chip" data-tech="spi"><svg class="tech-icon">
-                    <use href="#icon-spi" />
-                  </svg>SPI</span>
-                <span class="tech-chip" data-tech="i2c"><svg class="tech-icon">
-                    <use href="#icon-i2c" />
-                  </svg>I²C</span>
-                <span class="tech-chip" data-tech="uart"><svg class="tech-icon">
-                    <use href="#icon-uart" />
-                  </svg>UART</span>
-              </div>
-            </div>
-            <span class="project-year">2022</span>
-          </li>
-
-        </ul>
-      </div>
-
-      <!-- BLOG -->
-      <div class="page" id="page-blog">
-        <div class="section-rule">
-          <span class="section-rule-label">writing</span>
-          <div class="section-rule-line"></div>
-        </div>
-        <div id="blog-loading" class="loading-msg">loading posts…</div>
-        <ul class="blog-list" id="blog-list"></ul>
-      </div>
-
-      <!-- ART -->
-      <div class="page" id="page-art">
-        <div class="section-rule">
-          <span class="section-rule-label">generative art</span>
-          <div class="section-rule-line"></div>
-        </div>
-        <div id="art-loading" class="loading-msg">loading gallery…</div>
-        <div class="art-grid" id="art-grid"></div>
-      </div>
-
-      <!-- INFO -->
-      <div class="page" id="page-info">
-        <div class="section-rule">
-          <span class="section-rule-label">about</span>
-          <div class="section-rule-line"></div>
-        </div>
-        <div class="info-two-col">
-          <div class="info-col">
-            <div class="info-col-label">who</div>
-            <p>
-              i'm an <span>embedded systems developer</span><br>
-              who cares about writing software<br>
-              close to the metal.<br><br>
-              i think <span>good firmware</span> and<br>
-              <span>good hardware design</span> are<br>
-              inseparable disciplines.
-            </p>
-          </div>
-          <div class="info-col">
-            <div class="info-col-label">what i do</div>
-            <ul class="skill-rows">
-              <li class="skill-row">c · c++ · rust <span>languages</span></li>
-              <li class="skill-row">arm cortex-m · risc-v <span>architectures</span></li>
-              <li class="skill-row">freertos · zephyr <span>rtos</span></li>
-              <li class="skill-row">can · spi · i2c · uart <span>protocols</span></li>
-              <li class="skill-row">gdb · openocd · jtag <span>debug</span></li>
-              <li class="skill-row">cmake · make · git <span>tooling</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACT -->
-      <div class="page" id="page-contact">
-        <p class="contact-big">
-          have something<br>
-          <em>worth building?</em><br>
-          let's <em>talk</em> about <span class="acc">it.</span>
-        </p>
-        <div class="contact-grid">
-          <a href="mailto:you@efive.dev" class="contact-item">
-            <div class="contact-item-label">email</div>
-            <div class="contact-item-value">you@efive.dev</div>
-          </a>
-          <a href="https://github.com/efive-dev" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-item-label">github</div>
-            <div class="contact-item-value">efive-dev</div>
-          </a>
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-item-label">linkedin</div>
-            <div class="contact-item-value">your-profile</div>
-          </a>
-        </div>
-      </div>
-
-    </div><!-- /content -->
-  </div><!-- /app -->
-
-  <!-- ── MOBILE NAV DRAWER (outside #app — avoids stacking-context trap) ── -->
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <button class="nav-btn active" onclick="showPage('home', this); closeMobileNav()">home</button>
-    <button class="nav-btn" onclick="showPage('projects', this); closeMobileNav()">projects</button>
-    <button class="nav-btn" onclick="showPage('blog', this); closeMobileNav()">blog</button>
-    <button class="nav-btn" onclick="showPage('art', this); closeMobileNav()">art</button>
-    <button class="nav-btn" onclick="showPage('info', this); closeMobileNav()">info</button>
-    <button class="nav-btn" onclick="showPage('contact', this); closeMobileNav()">contact</button>
-    <div class="mobile-nav-themes">
-      <button class="theme-toggle" onclick="setTheme('dark', this)">dark</button>
-      <button class="theme-toggle" onclick="setTheme('light', this)">light</button>
-      <button class="theme-toggle" onclick="setTheme('amber', this)">amber</button>
     </div>
-  </nav>
 
-  <!-- STATUS BAR -->
-  <div id="statusbar">
-    <span id="status-left">ready<span class="blink"></span></span>
-    <span id="status-right"></span>
+    <!-- PROJECTS -->
+    <div class="page" id="page-projects">
+      <div class="section-rule">
+        <span class="section-rule-label">selected work</span>
+        <div class="section-rule-line"></div>
+      </div>
+
+      <ul class="project-list">
+
+        <li class="project-entry">
+          <span class="project-num">01</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                rtos scheduler <span class="project-tag">firmware</span>
+              </a>
+            </div>
+            <p class="project-summary">preemptive priority-based task scheduler built from scratch on Cortex-M4. context switching, tick timer, and basic IPC via semaphores.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="c"><svg class="tech-icon"><use href="#icon-c"/></svg>C</span>
+              <span class="tech-chip" data-tech="arm"><svg class="tech-icon"><use href="#icon-arm"/></svg>ARM</span>
+              <span class="tech-chip" data-tech="rtos"><svg class="tech-icon"><use href="#icon-rtos"/></svg>RTOS</span>
+              <span class="tech-chip" data-tech="asm"><svg class="tech-icon"><use href="#icon-asm"/></svg>ASM</span>
+            </div>
+          </div>
+          <span class="project-year">2024</span>
+        </li>
+
+        <li class="project-entry">
+          <span class="project-num">02</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                can bus monitor <span class="project-tag">embedded</span>
+              </a>
+            </div>
+            <p class="project-summary">USB-connected CAN sniffer with a Python host tool for real-time frame decoding, filtering by ID mask, and CSV logging.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="c"><svg class="tech-icon"><use href="#icon-c"/></svg>C</span>
+              <span class="tech-chip" data-tech="can"><svg class="tech-icon"><use href="#icon-can"/></svg>CAN</span>
+              <span class="tech-chip" data-tech="python"><svg class="tech-icon"><use href="#icon-python"/></svg>Python</span>
+              <span class="tech-chip" data-tech="uart"><svg class="tech-icon"><use href="#icon-uart"/></svg>UART</span>
+            </div>
+          </div>
+          <span class="project-year">2024</span>
+        </li>
+
+        <li class="project-entry">
+          <span class="project-num">03</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                bootloader prototype <span class="project-tag">low-level</span>
+              </a>
+            </div>
+            <p class="project-summary">bare-metal bootloader with UART-based firmware update, CRC32 integrity check, and fallback to last-known-good image on failure.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="c"><svg class="tech-icon"><use href="#icon-c"/></svg>C</span>
+              <span class="tech-chip" data-tech="arm"><svg class="tech-icon"><use href="#icon-arm"/></svg>ARM</span>
+              <span class="tech-chip" data-tech="uart"><svg class="tech-icon"><use href="#icon-uart"/></svg>UART</span>
+              <span class="tech-chip" data-tech="flash"><svg class="tech-icon"><use href="#icon-flash"/></svg>Flash</span>
+            </div>
+          </div>
+          <span class="project-year">2023</span>
+        </li>
+
+        <li class="project-entry">
+          <span class="project-num">04</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                sensor fusion library <span class="project-tag">c++</span>
+              </a>
+            </div>
+            <p class="project-summary">complementary + Kalman filter library for IMU data fusion. header-only, no heap allocation, tested on STM32 and nRF52.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="cpp"><svg class="tech-icon"><use href="#icon-cpp"/></svg>C++</span>
+              <span class="tech-chip" data-tech="spi"><svg class="tech-icon"><use href="#icon-spi"/></svg>SPI</span>
+              <span class="tech-chip" data-tech="i2c"><svg class="tech-icon"><use href="#icon-i2c"/></svg>I²C</span>
+              <span class="tech-chip" data-tech="cmake"><svg class="tech-icon"><use href="#icon-cmake"/></svg>CMake</span>
+            </div>
+          </div>
+          <span class="project-year">2023</span>
+        </li>
+
+        <li class="project-entry">
+          <span class="project-num">05</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                spi / i2c driver stack <span class="project-tag">drivers</span>
+              </a>
+            </div>
+            <p class="project-summary">interrupt-driven, DMA-capable peripheral driver layer for STM32H7. ring-buffer TX/RX, configurable timeouts, multi-device bus arbitration.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="c"><svg class="tech-icon"><use href="#icon-c"/></svg>C</span>
+              <span class="tech-chip" data-tech="spi"><svg class="tech-icon"><use href="#icon-spi"/></svg>SPI</span>
+              <span class="tech-chip" data-tech="i2c"><svg class="tech-icon"><use href="#icon-i2c"/></svg>I²C</span>
+              <span class="tech-chip" data-tech="arm"><svg class="tech-icon"><use href="#icon-arm"/></svg>ARM</span>
+            </div>
+          </div>
+          <span class="project-year">2023</span>
+        </li>
+
+        <li class="project-entry">
+          <span class="project-num">06</span>
+          <div class="project-body">
+            <div class="project-top">
+              <a class="project-name-link" href="https://github.com/efive-dev" target="_blank" rel="noopener">
+                logic analyzer tool <span class="project-tag">tooling</span>
+              </a>
+            </div>
+            <p class="project-summary">CLI tool that parses raw 8-channel LA captures and reconstructs SPI, I²C, and UART frames with timing annotations.</p>
+            <div class="project-tech">
+              <span class="tech-chip" data-tech="python"><svg class="tech-icon"><use href="#icon-python"/></svg>Python</span>
+              <span class="tech-chip" data-tech="spi"><svg class="tech-icon"><use href="#icon-spi"/></svg>SPI</span>
+              <span class="tech-chip" data-tech="i2c"><svg class="tech-icon"><use href="#icon-i2c"/></svg>I²C</span>
+              <span class="tech-chip" data-tech="uart"><svg class="tech-icon"><use href="#icon-uart"/></svg>UART</span>
+            </div>
+          </div>
+          <span class="project-year">2022</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- BLOG -->
+    <div class="page" id="page-blog">
+      <div class="section-rule">
+        <span class="section-rule-label">writing</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <div id="blog-loading" class="loading-msg">loading posts…</div>
+      <ul class="blog-list" id="blog-list"></ul>
+    </div>
+
+    <!-- ART -->
+    <div class="page" id="page-art">
+      <div class="section-rule">
+        <span class="section-rule-label">generative art</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <div id="art-loading" class="loading-msg">loading gallery…</div>
+      <div class="art-grid" id="art-grid"></div>
+    </div>
+
+    <!-- INFO -->
+    <div class="page" id="page-info">
+      <div class="section-rule">
+        <span class="section-rule-label">about</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="info-two-col">
+        <div class="info-col">
+          <div class="info-col-label">who</div>
+          <p>
+            i'm an <span>embedded systems developer</span><br>
+            who cares about writing software<br>
+            close to the metal.<br><br>
+            i think <span>good firmware</span> and<br>
+            <span>good hardware design</span> are<br>
+            inseparable disciplines.
+          </p>
+        </div>
+        <div class="info-col">
+          <div class="info-col-label">what i do</div>
+          <ul class="skill-rows">
+            <li class="skill-row">c · c++ · rust <span>languages</span></li>
+            <li class="skill-row">arm cortex-m · risc-v <span>architectures</span></li>
+            <li class="skill-row">freertos · zephyr <span>rtos</span></li>
+            <li class="skill-row">can · spi · i2c · uart <span>protocols</span></li>
+            <li class="skill-row">gdb · openocd · jtag <span>debug</span></li>
+            <li class="skill-row">cmake · make · git <span>tooling</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="page" id="page-contact">
+      <p class="contact-big">
+        have something<br>
+        <em>worth building?</em><br>
+        let's <em>talk</em> about <span class="acc">it.</span>
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:you@efive.dev" class="contact-item">
+          <div class="contact-item-label">email</div>
+          <div class="contact-item-value">you@efive.dev</div>
+        </a>
+        <a href="https://github.com/efive-dev" target="_blank" rel="noopener" class="contact-item">
+          <div class="contact-item-label">github</div>
+          <div class="contact-item-value">efive-dev</div>
+        </a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="contact-item">
+          <div class="contact-item-label">linkedin</div>
+          <div class="contact-item-value">your-profile</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<!-- ── MOBILE NAV DRAWER (outside #app — avoids stacking-context trap) ── -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="nav-btn active" onclick="showPage('home', this); closeMobileNav()">home</button>
+  <button class="nav-btn" onclick="showPage('projects', this); closeMobileNav()">projects</button>
+  <button class="nav-btn" onclick="showPage('blog', this); closeMobileNav()">blog</button>
+  <button class="nav-btn" onclick="showPage('art', this); closeMobileNav()">art</button>
+  <button class="nav-btn" onclick="showPage('info', this); closeMobileNav()">info</button>
+  <button class="nav-btn" onclick="showPage('contact', this); closeMobileNav()">contact</button>
+  <div class="mobile-nav-themes">
+    <button class="theme-toggle" onclick="setTheme('dark', this)">dark</button>
+    <button class="theme-toggle" onclick="setTheme('light', this)">light</button>
+    <button class="theme-toggle" onclick="setTheme('amber', this)">amber</button>
   </div>
+</nav>
 
-  <div class="big-label" id="big-label">home</div>
+<!-- STATUS BAR -->
+<div id="statusbar">
+  <span id="status-left">ready<span class="blink"></span></span>
+  <span id="status-right"></span>
+</div>
 
-  <!-- ── SCRIPTS ── load order matters -->
-  <script src="js/theme.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/bg.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/icons.js"></script>
-  <script src="js/blog.js"></script>
-  <script src="js/art.js"></script>
+<div class="big-label" id="big-label">home</div>
+
+<!-- ── SCRIPTS ── load order matters -->
+<script src="js/theme.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/bg.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/art.js"></script>
 
 </body>
-
 </html>
