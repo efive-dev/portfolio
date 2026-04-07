@@ -80,7 +80,7 @@ a {
   font-size: 15px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--fg--mid);
+  color: var(--fg-mid);
   white-space: nowrap;
 }
 
