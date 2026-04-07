@@ -1,0 +1,26 @@
+[
+  {
+    "id":          "flow-field-01",
+    "title":       "flow field 01",
+    "date":        "2025-01-20",
+    "medium":      "canvas api",
+    "description": "perlin noise flow field. each particle follows the gradient of a noise function, leaving a faint trail. run long enough and the field reveals its own topology.",
+    "image":       ""
+  },
+  {
+    "id":          "cellular-automaton",
+    "title":       "cellular automaton",
+    "date":        "2025-02-14",
+    "medium":      "processing",
+    "description": "rule 110 — one of the simplest systems known to be capable of universal computation. emergent structure from a one-line rule.",
+    "image":       "art/images/a.png"
+  },
+  {
+    "id":          "reaction-diffusion",
+    "title":       "reaction diffusion",
+    "date":        "2025-03-01",
+    "medium":      "webgl",
+    "description": "gray-scott model. two virtual chemicals interact and diffuse across a grid. the parameters sit just at the edge of stability — shift them and the patterns collapse or explode.",
+    "image":       "art/images/ab.png"
+  }
+]
