@@ -31,7 +31,7 @@
   .contact-item:last-child { border-bottom: none; }
 
   /* smaller art grid */
-  .art-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .art-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
 
   /* hide decorative elements */
   .big-label { display: none; }
@@ -63,7 +63,7 @@
   }
 
   /* 2-col art grid on small phones */
-  .art-grid { grid-template-columns: repeat(2, 1fr); }
+  .art-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
 
   /* contact page: don't try to center-vertically on small screens */
   #page-contact {

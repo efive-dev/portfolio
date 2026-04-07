@@ -1,65 +1,73 @@
 [
   {
     "id": "accretion_disc",
-    "title": "Cosmo - 01: Accretion Disc",
+    "title": "01: Accretion Disc",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "A dark signularity at centre encircled by a dense flat particle disc",
     "image": "art/images/accretion_disc.png"
   },
   {
     "id": "binary_drift",
-    "title": "Cosmo - 02: Binary Drift",
+    "title": "02: Binary Drift",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "Two red orbs in a mutual orbit, each with its own particle halo",
     "image": "art/images/binary_drift.png"
   },
   {
     "id": "comet_arc",
-    "title": "Cosmo - 03: Comet Arc",
+    "title": "03: Comet Arc",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "A bright red nucleus, its tail fans on multiple layers",
     "image": "art/images/comet_arc.png"
   },
   {
     "id": "crescent_streaks",
-    "title": "Cosmo - 04: Crescent Streaks",
+    "title": "04: Crescent Streaks",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "Several crescents tumble through the frame at different sizes and rotations, each trailing fine parallel speed lines",
     "image": "art/images/crescent_streaks.png"
   },
   {
     "id": "gravity_lens",
-    "title": "Cosmo - 05: Gravity Lens",
+    "title": "05: Gravity Lens",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "Hundreds of horizontal field lines cross the canvas. A red orb in the centre acting like a gravitational lens",
     "image": "art/images/gravity_lens.png"
   },
   {
     "id": "nested_shells",
-    "title": "Cosmo - 06: Nested Shells",
+    "title": "06: Nested Shells",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "Eight concentric elliptical shells of particles, each tilted at a different angle",
     "image": "art/images/nested_shells.png"
   },
   {
     "id": "orbital_rings",
-    "title": "Cosmo - 07: Orbital Rings",
+    "title": "07: Orbital Rings",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "A red planet surrounded by a family of elliptical arcs",
     "image": "art/images/orbital_rings.png"
   },
   {
     "id": "orbit_dust",
-    "title": "Cosmo - 08: Orbit Dust",
+    "title": "08: Orbit Dust",
     "date": "04/2026",
     "medium": "Rust - Nannou",
+    "series": "Planetes",
     "description": "A red orb at the centre surrounded by a ring system built of tiny particles",
     "image": "art/images/orbit_dust.png"
   }

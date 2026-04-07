@@ -89,7 +89,7 @@
         const prox = Math.max(0, 1 - dist / 300);
 
         // base opacity deliberately low; hover adds a calm lift
-        const op = 0.055 + prox * prox * 0.18;
+        const op = 0.085 + prox * prox * 0.68;
 
         ctx.fillStyle = `rgba(${rgb},${op})`;
         ctx.fillText(cell.char, cx, cy);

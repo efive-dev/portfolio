@@ -176,6 +176,8 @@
 .tech-chip[data-tech="python"]  { color: #d4d47e; border-color: #d4d47e33; }
 .tech-chip[data-tech="cmake"]   { color: #a0a0a0; border-color: #a0a0a033; }
 .tech-chip[data-tech="rust"]    { color: #e8784a; border-color: #e8784a33; }
+.tech-chip[data-tech="java"]    { color: #e8a050; border-color: #e8a05033; }
+.tech-chip[data-tech="golang"]  { color: #7accd4; border-color: #7accd433; }
 
 /* amber theme: mute the colours slightly */
 [data-theme="amber"] .tech-chip[data-tech] { color: var(--fg-mid); border-color: var(--fg-dim); }
@@ -195,6 +197,9 @@
 [data-theme="light"] .tech-chip[data-tech="flash"]  { color: #8a4a2a; border-color: #8a4a2a44; }
 [data-theme="light"] .tech-chip[data-tech="python"] { color: #7a7a10; border-color: #7a7a1044; }
 [data-theme="light"] .tech-chip[data-tech="cmake"]  { color: #505050; border-color: #50505044; }
+[data-theme="light"] .tech-chip[data-tech="rust"]   { color: #b04010; border-color: #b0401044; }
+[data-theme="light"] .tech-chip[data-tech="java"]   { color: #b05800; border-color: #b0580044; }
+[data-theme="light"] .tech-chip[data-tech="golang"] { color: #1a8a94; border-color: #1a8a9444; }
 
 /* SVG icon inside chip */
 .tech-icon {
@@ -344,23 +349,51 @@
 /* ── ART GALLERY ── */
 #page-art { padding-top: 40px; padding-bottom: 80px; }
 
-.art-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1px;
-  background: var(--fg-dim);
-  border: 1px solid var(--fg-dim);
-  margin-bottom: 60px;
+#art-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
+/* ── series section wrapper ── */
+.art-series {
+  margin-bottom: 52px;
+}
+
+.art-series-rule {
+  margin-bottom: 20px;
+}
+
+/* piece count at the right end of the series rule */
+.art-series-count {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--fg-mid);
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+/* ── card grid ── */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* ── individual card ── */
 .art-card {
   position: relative;
   aspect-ratio: 1;
   background: var(--bg);
   overflow: hidden;
-  transition: opacity 0.2s;
+  border: 1px solid var(--fg-dim);
+  cursor: crosshair;
+  transition: border-color 0.2s, transform 0.2s;
 }
-.art-card:hover { opacity: 0.82; }
+.art-card:hover {
+  border-color: var(--fg-mid);
+  transform: translateY(-2px);
+}
 
 .art-card img {
   width: 100%;
@@ -380,6 +413,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--fg-mid);
+  opacity: 0.5;
 }
 
 /* hover info strip */
@@ -388,14 +422,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 14px 16px;
-  background: linear-gradient(transparent, rgba(8, 8, 8, 0.88));
+  padding: 16px;
+  background: linear-gradient(transparent, rgba(8, 8, 8, 0.92));
   transform: translateY(100%);
-  transition: transform 0.25s ease;
+  transition: transform 0.22s ease;
+}
+[data-theme="light"] .art-card-info {
+  background: linear-gradient(transparent, rgba(240, 236, 230, 0.94));
 }
 .art-card:hover .art-card-info { transform: translateY(0); }
 
-/* video thumbnail in grid — same sizing as <img> */
 .art-card-video {
   width: 100%;
   height: 100%;
@@ -408,7 +444,7 @@
   font-size: 11px;
   color: var(--fg-hi);
   letter-spacing: 0.04em;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .art-card-medium {
   font-size: 9px;
