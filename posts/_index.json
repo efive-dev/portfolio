@@ -1,23 +1,13 @@
 [
   {
-    "id":      "hello-world",
-    "title":   "hello, world",
-    "date":    "2025-01-15",
-    "tags":    ["meta", "writing"],
-    "excerpt": "first post. why i'm starting to write things down and what i hope to figure out along the way."
-  },
-  {
-    "id":      "embedded-dev-notes",
-    "title":   "notes on embedded development",
-    "date":    "2025-02-08",
-    "tags":    ["embedded", "c", "rtos"],
-    "excerpt": "things i wish i knew earlier — memory layout, interrupt discipline, and why the debugger is your best friend."
-  },
-  {
-    "id":      "on-minimalism",
-    "title":   "on minimalism in interface design",
-    "date":    "2025-03-10",
-    "tags":    ["design", "thoughts"],
-    "excerpt": "minimalism isn't about removing things. it's about removing the wrong things. a distinction that sounds obvious but takes a while to actually internalize."
+    "id": "01_Planetes",
+    "title": "Planetes: a reflection on gravity and the cosmo",
+    "date": "2026-04-08",
+    "tags": [
+      "generative-art",
+      "rust",
+      "nannou"
+    ],
+    "excerpt": "A meditative collection on the vastness of space, exploring our place in the universe through code"
   }
 ]
