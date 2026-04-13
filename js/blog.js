@@ -27,7 +27,7 @@ const Blog = (() => {
     const loadingEl = document.getElementById('blog-loading');
 
     try {
-      const res = await fetch('./../posts/_index.json');
+      const res = await fetch('posts/_index.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       posts  = await res.json();
       loaded = true;
