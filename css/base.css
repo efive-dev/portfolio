@@ -5,9 +5,9 @@
 /* ── THEMES ── */
 :root {
   --bg: #0a0a0a;
-  --fg: #d4d0c8;
-  --fg-dim: #2e2e2e;
-  --fg-mid: #5a5a5a;
+  --fg: #dedad2;
+  --fg-dim: #3d3d3d;
+  --fg-mid: #909090;
   --fg-hi: #ffffff;
   --accent: #c8f0a0;
   --mono: 'DM Mono', monospace;
@@ -19,8 +19,8 @@
 [data-theme="light"] {
   --bg: #f2efea;
   --fg: #1a1a1a;
-  --fg-dim: #d0cdc8;
-  --fg-mid: #888;
+  --fg-dim: #b8b4ae;
+  --fg-mid: #5e5e5e;
   --fg-hi: #000;
   --accent: #2a7a00;
 }
@@ -28,8 +28,8 @@
 [data-theme="amber"] {
   --bg: #0e0900;
   --fg: #d4900a;
-  --fg-dim: #2a1e00;
-  --fg-mid: #7a5000;
+  --fg-dim: #3d2d00;
+  --fg-mid: #b07820;
   --fg-hi: #ffcc44;
   --accent: #ffcc44;
 }
