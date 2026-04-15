@@ -6,7 +6,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "A dark signularity at centre encircled by a dense flat particle disc",
-    "image": "art/images/accretion_disc.png"
+    "image": "art/images/planetes/accretion_disc.png"
   },
   {
     "id": "binary_drift",
@@ -15,7 +15,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "Two red orbs in a mutual orbit, each with its own particle halo",
-    "image": "art/images/binary_drift.png"
+    "image": "art/images/planetes/binary_drift.png"
   },
   {
     "id": "comet_arc",
@@ -24,7 +24,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "A bright red nucleus, its tail fans on multiple layers",
-    "image": "art/images/comet_arc.png"
+    "image": "art/images/planetes/comet_arc.png"
   },
   {
     "id": "crescent_streaks",
@@ -33,7 +33,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "Several crescents tumble through the frame at different sizes and rotations, each trailing fine parallel speed lines",
-    "image": "art/images/crescent_streaks.png"
+    "image": "art/images/planetes/crescent_streaks.png"
   },
   {
     "id": "gravity_lens",
@@ -42,7 +42,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "Hundreds of horizontal field lines cross the canvas. A red orb in the centre acting like a gravitational lens",
-    "image": "art/images/gravity_lens.png"
+    "image": "art/images/planetes/gravity_lens.png"
   },
   {
     "id": "nested_shells",
@@ -51,7 +51,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "Eight concentric elliptical shells of particles, each tilted at a different angle",
-    "image": "art/images/nested_shells.png"
+    "image": "art/images/planetes/nested_shells.png"
   },
   {
     "id": "orbital_rings",
@@ -60,7 +60,7 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "A red planet surrounded by a family of elliptical arcs",
-    "image": "art/images/orbital_rings.png"
+    "image": "art/images/planetes/orbital_rings.png"
   },
   {
     "id": "orbit_dust",
@@ -69,6 +69,60 @@
     "medium": "Rust - Nannou",
     "series": "Planetes",
     "description": "A red orb at the centre surrounded by a ring system built of tiny particles",
-    "image": "art/images/orbit_dust.png"
+    "image": "art/images/planetes/orbit_dust.png"
+  },
+  {
+    "id": "caldera",
+    "title": "01: Caldera",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Ember tiles cooling at the mouth of the volcano",
+    "image": "art/images/tiles/caldera.png"
+  },
+  {
+    "id": "cryolite",
+    "title": "02: Cryolite",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Glacial half moons stacked like ice shelves",
+    "image": "art/images/tiles/cryolite.png"
+  },
+  {
+    "id": "stratum",
+    "title": "03: Stratum",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Desert strata carved in rust and bone",
+    "image": "art/images/tiles/stratum.png"
+  },
+  {
+    "id": "coronal",
+    "title": "04: Coronal",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Aurora rings blooming in a teal and violet sky",
+    "image": "art/images/tiles/coronal.png"
+  },
+  {
+    "id": "vesper",
+    "title": "05: Vesper",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Dusk shapes dissolving into blush and plum",
+    "image": "art/images/tiles/vesper.png"
+  },
+  {
+    "id": "bathyal",
+    "title": "06: Bathyal",
+    "date": "04/2026",
+    "medium": "Rust - Nannou",
+    "series": "Tiles",
+    "description": "Midnight geometry adrift in a deep navy sea",
+    "image": "art/images/tiles/bathyal.png"
   }
 ]
