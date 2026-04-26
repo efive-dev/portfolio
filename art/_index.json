@@ -124,5 +124,41 @@
     "series": "Tiles",
     "description": "Midnight geometry adrift in a deep navy sea",
     "image": "art/images/tiles/bathyal.png"
+  },
+  {
+    "id": "pane",
+    "title": "01: Pane",
+    "date": "05/2026",
+    "medium": "Rust - Nannou",
+    "series": "Strata",
+    "description": "A study of the gap as a physical mortar holding chalk and graphite leaves in place",
+    "image": "art/images/strata/pane.png"
+  },
+  {
+    "id": "quarry",
+    "title": "02: Quarry",
+    "date": "05/2026",
+    "medium": "Rust - Nannou",
+    "series": "Strata",
+    "description": "A monochromatic investigation into tonal deposits resting on a pale limestone surface",
+    "image": "art/images/strata/quarry.png"
+  },
+  {
+    "id": "plate",
+    "title": "03: Plate",
+    "date": "05/2026",
+    "medium": "Rust - Nannou",
+    "series": "Strata",
+    "description": "An exploration of geological depth achieved through layered ivory rectangles with varying transparency",
+    "image": "art/images/strata/plate.png"
+  },
+  {
+    "id": "seam",
+    "title": "04: Seam",
+    "date": "05/2026",
+    "medium": "Rust - Nannou",
+    "series": "Strata",
+    "description": "A break in the geometric grid that uses skewed parallelograms to mimic hand-cut stone",
+    "image": "art/images/strata/seam.png"
   }
 ]
