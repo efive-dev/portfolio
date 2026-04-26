@@ -9,5 +9,15 @@
       "nannou"
     ],
     "excerpt": "A meditative collection on the vastness of space, exploring our place in the universe through code"
+  },
+  {
+    "id": "02_Strata",
+    "title": "Strata: recursive stone patterns",
+    "date": "2026-05-01",
+    "tags": [
+      "generative-art",
+      "rust",
+      "nannou"
+    ],
   }
 ]

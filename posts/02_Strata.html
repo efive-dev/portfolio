@@ -1,0 +1,32 @@
+<header>
+  <h1>Strata</h1>
+  <p>Finding the weight of stone in the lightness of code.</p>
+</header>
+<article>
+  <section>
+    <p>
+      In generative art, the grid is often a cage—perfect, mathematical, and sterile. With <strong>Strata</strong>, I wanted to treat the canvas less like a coordinate plane and more like a quarry. The collection explores how a simple recursive split can mimic the tectonic pressures that form sedimentary rock, focusing on the "materiality" of digital space.
+    </p>
+  </section>
+  <section>
+    <h2>The Weight of the Gap</h2>
+    <p>
+      In early iterations, the space between shapes was just an absence—a background showing through. In <em>Pane</em>, I decided that the gap should be a substance. By setting the background to a warm taupe and treating it as "mortar," the chalk and graphite rects no longer float; they are held. It’s the difference between a drawing of bricks and a wall of stone.
+    </p>
+  </section>
+  <section>
+    <h2>Atmospheric Depth</h2>
+    <p>
+      With <em>Plate</em>, the goal was to find depth without the crutch of perspective. By using varying levels of alpha transparency (randomized between 0.65 and 0.98), the ivory leaves stack and recede. Some feel flush with the surface, while others feel buried beneath meters of sediment. It’s a reminder that in code, "further away" can simply mean "less opaque."
+    </p>
+  </section>
+  <section>
+    <h2>The Wandering Blade</h2>
+    <p>
+      Perfect lines don't exist in nature. <em>Seam</em> introduces a deliberate "skew." By shifting the top edges of the rectangles while keeping the bases fixed, the compositions take on a lean. It feels like stone cut with a wandering blade or earth shifting under its own weight. It’s a subtle break in the logic of the Binary Space Partition that makes the whole thing feel humanly flawed.
+    </p>
+  </section>
+  <section>
+    <strong>Technical note:</strong> The entire collection is built in Rust using the Nannou framework. Each piece utilizes a recursive <code>subdivide</code> function that chooses between horizontal and vertical splits based on a ratio, stopping only when the depth threshold or a random "stop" probability is met.
+  </section>
+</article>
