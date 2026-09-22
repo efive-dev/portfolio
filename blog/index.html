@@ -1,0 +1,61 @@
+---
+layout: null
+permalink: /blog/
+title: Blog
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blog | Edoardo Quinto</title>
+  <meta name="description" content="Edoardo Quinto blog.">
+  <meta name="theme-color" content="#fdf0d5">
+  <link rel="preload" href="{{ '/fonts/bricolage-grotesque-latin-opsz-normal.woff2' | relative_url }}" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+</head>
+
+<body>
+
+  {% include chrome-nav.html %}
+
+  <main>
+    <section class="blog-hero">
+      <h1>Writing</h1>
+      <p>My personal blog, sometimes technical stuff other times hobbies :)</p>
+    </section>
+
+    <section class="blog-list">
+      {% for post in site.posts %}
+      <a class="postcard" href="{{ post.url | relative_url }}">
+        <span class="postcard__body">
+          <span class="postcard__date">{{ post.date | date: "%B %-d, %Y" }}</span>
+          <span class="postcard__title">{{ post.title }}</span>
+          <span class="postcard__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 30 }}</span>
+          {% if post.tags.size > 0 %}
+          <span class="postcard__tags">{% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}</span>
+          {% endif %}
+        </span>
+        <span class="postcard__go" aria-hidden="true"><svg class="arr" viewBox="0 0 16 16">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg></span>
+      </a>
+      {% else %}
+      <!--<p class="blog-empty">No posts yet. Add a Markdown file to <code>_posts/</code> (for example <code>2026-01-01-my-first-post.md</code>) and push — GitHub Pages builds it automatically.</p>-->
+      <p class="blog-empty">No posts yet.</p>
+
+      {% endfor %}
+    </section>
+  </main>
+
+  {% include chrome-foot.html %}
+
+  <script src="{{ '/js/vendor/gsap.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/vendor/ScrollTrigger.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/vendor/lenis.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/blog.js' | relative_url }}"></script>
+</body>
+
+</html>

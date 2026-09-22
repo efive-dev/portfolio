@@ -1,0 +1,20 @@
+<header class="nav" id="nav">
+  <a class="brand" href="{{ '/index.html' | relative_url }}" aria-label="Edoardo Quinto, home"><i></i><span>Edoardo
+      Quinto</span></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %} class="is-current" {% endif %}>Blog</a>
+  </nav>
+  <div class="nav__right">
+    <a class="btn nav__cta" href="{{ '/index.html#contact' | relative_url }}">Say hello <span class="go"><svg
+          class="arr" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg></span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet">
+  <a href="{{ '/index.html' | relative_url }}">Home</a>
+  <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  <a href="{{ '/index.html#contact' | relative_url }}">Contact</a>
+</div>

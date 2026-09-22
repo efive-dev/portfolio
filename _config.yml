@@ -1,0 +1,29 @@
+# Jekyll config. GitHub Pages builds this automatically on every push to the
+# Pages branch — no local install and no GitHub Actions workflow required.
+title: "Alex Rivera"
+description: "Systems programmer — kernels, memory allocators, and the runtime code underneath everything else."
+
+# Project pages (username.github.io/repo-name) are served from a subpath.
+# GitHub Pages sets this automatically; only change it if you build locally
+# with a different setup, or deploy to a custom domain (then leave it "").
+baseurl: ""
+# url: "https://your-username.github.io"   # optional, only used for the RSS feed / SEO tags
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.zip"

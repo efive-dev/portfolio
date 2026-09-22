@@ -1,0 +1,55 @@
+---
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ page.title }} | Edoardo Quinto</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncatewords: 30 | xml_escape }}">
+  <meta name="theme-color" content="#fdf0d5">
+  <link rel="preload" href="{{ '/fonts/bricolage-grotesque-latin-opsz-normal.woff2' | relative_url }}" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+  {% if site.url %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
+</head>
+
+<body>
+
+  {% include chrome-nav.html %}
+
+  <main class="post">
+    <div class="post__head">
+      <a class="post__back" href="{{ '/blog/' | relative_url }}"><svg class="arr" viewBox="0 0 16 16"
+          aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg> All posts</a>
+      <div class="post__meta">
+        <span class="post__date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.tags.size > 0 %}
+        <ul class="post__tags">{% for t in page.tags %}<li class="pill">{{ t }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+      <h1 class="post__title">{{ page.title }}</h1>
+    </div>
+
+    <article class="article">
+      {{ content }}
+    </article>
+
+    <div class="post__foot">
+      <a href="{{ '/blog/' | relative_url }}">&larr; Back to all posts</a>
+    </div>
+  </main>
+
+  {% include chrome-foot.html %}
+
+  <script src="{{ '/js/vendor/gsap.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/vendor/ScrollTrigger.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/vendor/lenis.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/blog.js' | relative_url }}"></script>
+</body>
+
+</html>

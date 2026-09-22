@@ -1,224 +1,333 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edoardo Quinto - Embedded Software Engineer</title>
-  <meta name="description" content="Edoardo Quinto - Embedded Software Engineer">
-  <link rel="icon" type="image/png" href="assets/small-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Edoardo Quinto | Systems programmer</title>
+  <meta name="description" content="Portfolio of Quinto Edoardo, a systems software engineeer.">
+  <meta name="theme-color" content="#fdf0d5">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/small_icon.png">
 </head>
 
 <body>
-  <canvas id="flow-field-bg" aria-hidden="true"></canvas>
-  <img class="noise" src="assets/noise.svg" alt="" aria-hidden="true">
 
-  <div class="page">
-    <nav class="nav">
-      <div class="wrap nav-inner">
-        <a href="#top" class="nav-logo">EFIVE<span>-</span>DEV</a>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about" data-index="01">About</a></li>
-          <li><a href="#experience" data-index="02">Experience</a></li>
-          <li><a href="#projects" data-index="03">Projects</a></li>
-          <li><a href="#contact" data-index="04">Contact</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
+  <header class="nav" id="nav">
+    <a class="brand" href="#home" data-go="#home" aria-label="Edoardo Quinto, back to top"><i></i><span>Edoardo
+        Quinto</span></a>
+    <nav class="nav__links" aria-label="Primary"><a href="blog/">Blog</a></nav>
+    <div class="nav__right">
+      <a class="btn nav__cta" href="#contact" data-go="#contact">Say hello <span class="go"><svg class="arr"
+            viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg></span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet">Menu</button>
+    </div>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Sections">
+    <div class="rail__line"></div>
+    <div class="rail__fill" id="railFill"></div>
+    <a class="rail__n is-current" style="top:0%" href="#home" data-go="#home" data-sec="home"><span>Hello</span></a>
+    <a class="rail__n" style="top:25%" href="#about" data-go="#about" data-sec="about"><span>About</span></a>
+    <a class="rail__n" style="top:50%" href="#work" data-go="#work" data-sec="work"><span>Work</span></a>
+    <a class="rail__n" style="top:75%" href="#experience" data-go="#experience"
+      data-sec="experience"><span>Career</span></a>
+    <a class="rail__n" style="top:100%" href="#contact" data-go="#contact" data-sec="contact"><span>Contact</span></a>
+  </nav>
+
+  <div class="sheet" id="sheet">
+    <a href="#home" data-go="#home">Hello</a>
+    <a href="#about" data-go="#about">About</a>
+    <a href="#work" data-go="#work">Work</a>
+    <a href="#experience" data-go="#experience">Career</a>
+    <a href="blog/">Blog</a>
+    <a href="#contact" data-go="#contact">Contact</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <h1 class="name" id="name" aria-label="Edoardo Quinto"><span class="line">Edoardo</span><span
+          class="line">Quinto</span>
+      </h1>
+      <p class="intro fade-in"><span>Systems programmer. Working on operating system internals, memory allocators,
+          network stacks and the performance critical code underneath everything else.</span></p>
+      <p class="status fade-in"><i></i><span>Open to systems roles, from embedded to kernel</span></p>
+
+      <div class="morph" id="morph">
+        <p class="morph__t" id="morphText">I write the code your code runs on.</p>
       </div>
-    </nav>
+      <div class="slot fade-in" id="slot" aria-hidden="true">
+        <pre class="slot__code"><span class="k">void</span> *<span class="f">alloc</span>(Arena *a, <span class="k">int</span> n) {
+  n = <span class="f">align16</span>(n);
+  <span class="k">if</span> (a-&gt;at + n &gt; a-&gt;cap)
+    <span class="k">return</span> NULL;
+  <span class="k">void</span> *p = a-&gt;base + a-&gt;at;
+  a-&gt;at += n;
+  <span class="k">return</span> p;
+}</pre>
+      </div>
+    </section>
 
-    <main>
-      <!-- ============ HERO ============ -->
-      <header class="hero" id="top">
-        <div class="wrap">
-          <div class="hero-kicker"><span class="dot" aria-hidden="true"></span><span>AVAILABLE FOR NEW ROLES</span>
-          </div>
-          <h1>EMBEDDED<br>SOFTWARE<br><span class="accent-fill">ENGINEER</span>.</h1>
-          <div class="hero-sub">
-            <p class="hero-lede">I'm Edoardo Quinto, a software engineer specializing in embedded and systems software.
-              I'm interested in software optimization, intelligent device fleets and edge AI applications.</p>
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">View Projects</a>
-              <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <p class="about__text" id="aboutText">I like to work close to the metal: kernels, embedded systems, network
+        stacks and the runtime code that everything else builds upon. I'm interested in software optimization, edge AI
+        applications and runtime virtualization.</p>
+      <dl class="facts" id="facts">
+        <div class="fact">
+          <dt>Looking for</dt>
+          <dd>Early career or internship in system software.</dd>
+        </div>
+        <div class="fact">
+          <dt>Education</dt>
+          <dd>Bachelor degree in Computer Science.</dd>
+        </div>
+        <div class="fact">
+          <dt>Area of interest</dt>
+          <dd>Kernel, runtime, embedded and performance engineering.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="tools" id="tools">
+      <h2 class="tools__h">What I work in, and where I use it.</h2>
+      <ul>
+        <li class="tool">
+          <p class="tool__n">C</p>
+          <p class="tool__d">Kernels, drivers and anything that talks to hardware.</p>
+        </li>
+        <li class="tool">
+          <p class="tool__n">Rust (learning)</p>
+          <p class="tool__d">Memory safe systems code.</p>
+        </li>
+        <li class="tool">
+          <p class="tool__n">C++ (basics)</p>
+          <p class="tool__d">Latency sensitive systems.</p>
+        </li>
+        <li class="tool">
+          <p class="tool__n">Go and Python</p>
+          <p class="tool__d">Infrastructure and web services.</p>
+        </li>
+        <li class="tool">
+          <p class="tool__n">Linux</p>
+          <p class="tool__d">From embedded Linux to its internals.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work">
+      <div class="work__track" id="track">
+        <div class="work__intro">
+          <h2>Selected work</h2>
+          <p>Three projects I actually shipped, from an edge-AI scheduler to a finance tracker with a JWT API. Keep
+            scrolling.</p>
+        </div>
+
+        <article class="proj">
+          <div class="proj__body">
+            <div>
+              <p class="proj__kind">Edge AI inference scheduler</p>
+              <h3 class="proj__title">EdgeSched</h3>
+              <p class="proj__desc">A inference scheduler designed to efficiently distribute object detection workloads
+                across multiple NVIDIA Jetson inference engines. The system combines a Go based control plane with
+                C++/TensorRT inference engines, using load and thermal aware routing, resource monitoring, and gRPC
+                communication to optimize latency, throughput</p>
+            </div>
+            <div>
+              <ul class="pills">
+                <li class="pill">Go</li>
+                <li class="pill">C++</li>
+                <li class="pill">gRPC</li>
+                <li class="pill">TensorRT</li>
+              </ul>
+              <a class="textlink" href="https://github.com/efive-dev/EdgeSched" target="_blank" rel="noopener">View on
+                GitHub <svg class="arr" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"></path>
+                </svg></a>
             </div>
           </div>
-        </div>
-        <br><br>
-      </header>
-
-
-      <!-- ============ ABOUT ============ -->
-      <section class="section" id="about">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 class="section-title">About</h2>
-            <span class="section-index mono">01 / 04</span>
+          <div class="visbox">
+            <svg class="vis" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <text x="70" y="35" font-family="Bricolage Grotesque,system-ui,sans-serif" font-size="11"
+                fill="rgba(253,240,213,.9)">thermal-aware routing</text>
+              <g fill="none" stroke-linecap="round">
+                <path class="flow" d="M0 90C70 90 80 145 128 148"></path>
+                <path class="flow" d="M0 150C70 150 80 150 128 150"></path>
+                <path class="flow" d="M0 210C70 210 80 155 128 152"></path>
+              </g>
+              <circle cx="150" cy="150" r="22" fill="none" stroke="#fdf0d5" stroke-opacity=".5"></circle>
+              <circle cx="150" cy="150" r="6" fill="#fdf0d5"></circle>
+              <path d="M172 145L210 96" stroke="#fdf0d5" stroke-width="2" fill="none"></path>
+              <path d="M172 155L210 204" stroke="#669bbc" stroke-width="2" fill="none"></path>
+              <rect x="210" y="62" width="110" height="68" rx="10" fill="rgba(253,240,213,.1)"
+                stroke="rgba(253,240,213,.35)"></rect>
+              <circle cx="226" cy="80" r="4" fill="#fdf0d5"></circle>
+              <text x="238" y="84" font-family="Bricolage Grotesque,system-ui,sans-serif" font-size="12"
+                font-weight="600" fill="#fdf0d5">engine-a</text>
+              <text x="226" y="104" font-family="ui-monospace,Menlo,monospace" font-size="10"
+                fill="rgba(253,240,213,.7)">queue</text>
+              <rect x="226" y="110" width="86" height="8" rx="4" fill="rgba(253,240,213,.15)"></rect>
+              <rect x="226" y="110" width="34" height="8" rx="4" fill="#fdf0d5"></rect>
+              <rect x="210" y="170" width="110" height="68" rx="10" fill="rgba(253,240,213,.1)"
+                stroke="rgba(102,155,188,.55)"></rect>
+              <circle cx="226" cy="188" r="4" fill="#669bbc"></circle>
+              <text x="238" y="192" font-family="Bricolage Grotesque,system-ui,sans-serif" font-size="12"
+                font-weight="600" fill="#669bbc">engine-b</text>
+              <text x="226" y="212" font-family="ui-monospace,Menlo,monospace" font-size="10"
+                fill="rgba(253,240,213,.7)">queue</text>
+              <rect x="226" y="218" width="86" height="8" rx="4" fill="rgba(253,240,213,.15)"></rect>
+              <rect x="226" y="218" width="70" height="8" rx="4" fill="#669bbc"></rect>
+              <g transform="translate(300,188)">
+                <circle r="13" fill="none" stroke="rgba(253,240,213,.2)" stroke-width="3"></circle>
+                <path d="M0 -13A13 13 0 1 1 -9.2 9.2" fill="none" stroke="#669bbc" stroke-width="3"
+                  stroke-linecap="round"></path>
+              </g>
+            </svg>
           </div>
-          <div class="about-grid">
-            <div class="about-copy">
-              <p>I'm currently completing my Bachelor's degree (graduation date in october) in Computer Science. My
-                expertise and experience is in embedded linux systems.</p>
-              <p class="muted-line">Other areas of interests are: cloud and distributed systems, especially for edge AI
-                and distributed machine learning.</p>
-              <p class="muted-line">Outside of software, I enjoy rock climbing (bouldering) and skateboarding.</p>
+        </article>
+
+        <article class="proj">
+          <div class="proj__body">
+            <div>
+              <p class="proj__kind">Embedded sensing</p>
+              <h3 class="proj__title">Temp<wbr>Intelligente</h3>
+              <p class="proj__desc">Embedded sensing system built for the BBC micro:bit v2 (nRF52833) that continuously
+                reads temperature and motion data, broadcasts them over Bluetooth Low Energy, and feeds a live terminal
+                dashboard</p>
             </div>
-            <div class="stat-grid" role="list" aria-label="Skills and focus">
-              <div class="stat" role="listitem">
-                <div class="stat-number">Embedded Linux</div>
-                <div class="stat-label">Core Expertise</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat-number">Edge AI</div>
-                <div class="stat-label">Area of Interest</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat-number">Distributed Systems</div>
-                <div class="stat-label">Area of Interest</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat-number">Cloud & Hybrid</div>
-                <div class="stat-label">Area of Interest</div>
-              </div>
+            <div>
+              <ul class="pills">
+                <li class="pill">C</li>
+                <li class="pill">Zephyr</li>
+                <li class="pill">Python</li>
+                <li class="pill">BLE</li>
+              </ul>
+              <a class="textlink" href="https://github.com/efive-dev/TempIntelligente" target="_blank"
+                rel="noopener">View on GitHub <svg class="arr" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"></path>
+                </svg></a>
             </div>
           </div>
-      </section>
-
-      <!-- ============ EXPERIENCE ============ -->
-      <section class="section" id="experience">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 class="section-title">Experience</h2>
-            <span class="section-index mono">02 / 04</span>
-          </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">May 2026 — Aug 2026</div>
-              <div>
-                <h3 class="timeline-role">Embedded software engineer intern<br><span class="company">Leonardo S.p.A.</span></h3>
-                <p class="timeline-desc">Evaluated the feasibility of <strong>container technologies</strong> on an <strong>
-                  AMD Zynq SoC</strong> for embedded applications, specifically <i>YOLO object detection pipelines</i> accelerated 
-                  with <strong>FPGA hardware</strong>. Conducted <strong>performance, resource usage, robustness, and 
-                    cybersecurity analyses</strong> by comparing a native embedded application with a containerized 
-                    implementation. Researched <strong>embedded container platforms</strong>, redesigned and deployed the 
-                    application on evaluation hardware, and measured <strong>execution times, latencies, and system resource 
-                      impact</strong>.</p>
-                <div class="timeline-tags">
-                  <span class="tag">Embedded Linux</span>
-                  <span class="tag">C / C++</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Docker</span>
-                  <span class="tag">Object Detection</span>
-                  <span class="tag">Yocto</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ PROJECTS ============ -->
-      <section class="section" id="projects">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 class="section-title">Projects</h2>
-            <span class="section-index mono">03 / 04</span>
-          </div>
-          <div class="project-grid">
-            <article class="project-card">
-              <span class="project-num mono">01</span>
-              <h3 class="project-title">TempIntelligente</h3>
-              <p class="project-desc">Embedded sensing system built for the BBC micro:bit v2 (nRF52833) that
-                continuously reads temperature and motion data, broadcasts them over Bluetooth Low Energy, and feeds a
-                live terminal dashboard.</p>
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">C</span>
-                <span class="tag">Zephyr RTOS</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/efive-dev/TempIntelligente">Github</a>
-              </div>
-            </article>
-            <article class="project-card">
-              <span class="project-num mono">02</span>
-              <h3 class="project-title">QuattriniTrack</h3>
-              <p class="project-desc">QuattriniTrack (from quattrini, meaning “money” in the Florentine dialect of
-                Italian) is a personal finance manager designed to help you track expenses and manage your personal
-                budget. The app is built using the following technologies: Golang, SQLC and Charm (TUI).</p>
-              <div class="project-tags">
-                <span class="tag">Golang</span>
-                <span class="tag">Backend</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/efive-dev/QuattriniTrack">Github</a>
-              </div>
-            </article>
-            <article class="project-card">
-              <span class="project-num mono">03</span>
-              <h3 class="project-title">EdgeSched</h3>
-              <p class="project-desc">EdgeSched is an edge AI inference scheduler designed to efficiently distribute object 
-                detection workloads across multiple NVIDIA Jetson inference engines. The system combines a Go based control 
-                plane with C++/TensorRT inference engines, using load and thermal aware routing, resource monitoring, and 
-                gRPC communication to optimize latency, throughput, and resource utilization.</p>
-              <div class="project-tags">
-                <span class="tag">Edge AI</span>
-                <span class="tag">Infrastructure</span>
-                <span class="tag">Golang</span>
-                <span class="tag">C++</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/efive-dev/EdgeSched">Github</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ CONTACT ============ -->
-      <section class="section" id="contact" style="border-bottom:none;">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 class="section-title">Contact</h2>
-            <span class="section-index mono">04 / 04</span>
-          </div>
-          <div class="contact-grid">
-            <div class="contact-intro">
-              <h2>Let's build<br>something that<br>ships.</h2>
-              <div class="contact-channels">
-                <a class="contact-channel"
-                  href="mailto:edoardo.quinto.dev@gmail.com"><span>Email</span></a>
-                <a class="contact-channel" href="https://github.com/efive-dev" target="_blank"
-                  rel="noopener"><span>Github</span><span>@efive-dev</span></a>
-                <a class="contact-channel" href="https://www.linkedin.com/in/edoardo-quinto/" target="_blank"
-                  rel="noopener"><span>LinkedIn</span><span>/in/edoardoquinto</span></a>
-              </div>
+          <div class="visbox">
+            <div class="vis term" aria-hidden="true">
+              <pre><span class="p">ble</span> connected → TempSensor
+temp    raw 24.3°C   holt 24.6°C
+motion  •    shock  ·
+battery 82%
+<span class="ok">anomaly</span> none in last 200 samples</pre>
             </div>
-           
           </div>
-        </div>
-      </section>
-    </main>
+        </article>
 
-    <footer class="footer">
-      <div class="wrap footer-inner">
-        <span>&copy; 2026 Edoardo Quinto</span>
-        <div class="footer-links">
-          <a href="#top">Back to Top</a>
+        <article class="proj">
+          <div class="proj__body">
+            <div>
+              <p class="proj__kind">Personal finance manager</p>
+              <h3 class="proj__title">Quattrini<wbr>Track</h3>
+              <p class="proj__desc">A Go finance tracker with a JWT protected REST API and a terminal UI, using SQLC for
+                type safe SQLite queries.</p>
+            </div>
+            <div>
+              <ul class="pills">
+                <li class="pill">Go</li>
+                <li class="pill">SQLite</li>
+                <li class="pill">JWT</li>
+                <li class="pill">TUI</li>
+              </ul>
+              <a class="textlink" href="https://github.com/efive-dev/QuattriniTrack" target="_blank" rel="noopener">View
+                on GitHub <svg class="arr" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"></path>
+                </svg></a>
+            </div>
+          </div>
+          <div class="visbox">
+            <svg class="vis" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <text x="70" y="35" font-family="Bricolage Grotesque,system-ui,sans-serif" font-size="11"
+                fill="rgba(253,240,213,.9)">spending by category</text>
+              <g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="rgba(253,240,213,.85)">
+                <text x="70" y="60">rent</text><text x="70" y="94">food</text>
+                <text x="70" y="128">transport</text><text x="70" y="162">subscriptions</text>
+              </g>
+              <rect x="150" y="48" width="130" height="14" rx="4" fill="#fdf0d5"></rect>
+              <rect x="150" y="82" width="81" height="14" rx="4" fill="#fdf0d5"></rect>
+              <rect x="150" y="116" width="45" height="14" rx="4" fill="#669bbc"></rect>
+              <rect x="150" y="150" width="25" height="14" rx="4" fill="#669bbc"></rect>
+              <g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="rgba(253,240,213,.7)"
+                text-anchor="end">
+                <text x="320" y="60">€820</text><text x="320" y="94">€510</text>
+                <text x="320" y="128">€286</text><text x="320" y="162">€158</text>
+              </g>
+              <line x1="70" y1="188" x2="330" y2="188" stroke="rgba(253,240,213,.2)"></line>
+              <text x="70" y="210" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#669bbc">POST
+                /transaction</text>
+              <text x="70" y="230" font-family="ui-monospace,Menlo,monospace" font-size="11"
+                fill="rgba(253,240,213,.7)">Authorization: Bearer •••••••••</text>
+              <rect x="280" y="202" width="18" height="14" rx="2" fill="none" stroke="#fdf0d5" stroke-width="1.6">
+              </rect>
+              <path d="M284 202v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#fdf0d5" stroke-width="1.6"></path>
+            </svg>
+          </div>
+        </article>
+      </div>
+      <div class="work__bar" aria-hidden="true"><i id="workBar"></i></div>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="exp" id="experience">
+      <h2 class="exp__h">Early in my career: building, shipping and learning fast.</h2>
+      <div class="rows" id="rows">
+        <button class="row is-active" type="button" aria-pressed="true">Leonardo S.P.A.</button>
+      </div>
+      <div class="details" id="details" aria-live="polite">
+        <div class="detail is-active">
+          <p class="detail__yrs">May 2026 to August 2026</p>
+          <h3 class="detail__role">Embedded Software Engineer Intern - Containerization</h3>
+          <p class="detail__txt">Investigated the feasibility of containerizing embedded AI workloads on an AMD Zynq
+            SoC, using YOLO object detection pipelines accelerated by FPGA hardware. Redesigned and deployed the
+            application on evaluation hardware, then benchmarked native and containerized implementations across
+            execution time, latency, resource usage, robustness and cybersecurity. Evaluated embedded container
+            platforms and analyzed the system level impact of containerization.</p>
         </div>
       </div>
-    </footer>
-  </div><!-- /.page -->
+    </section>
 
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div>
+        <h2 class="contact__h" id="contactH" aria-label="Let's write code close to the metal."><span class="line">
+            Let's write code</span>
+          <span class="line">close to the metal.</span>
+        </h2>
+        <p class="contact__sub">I'm looking for systems roles in kernel, runtime, embedded and performance engineering.
+          I try to reply within two working days.</p>
+      </div>
+      <div class="contact__row">
+        <a class="btn btn--light btn--lg" href="mailto:edoardo.quinto.dev@gmail.com">email <span class="go"><svg
+              class="arr" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg></span></a>
+        <div class="socials"><a href="https://github.com/efive-dev" target="_blank" data-placeholder>GitHub</a><a
+            href="https://www.linkedin.com/in/edoardo-quinto/" target="_blank" data-placeholder>LinkedIn</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Edoardo Quinto</span>
+    <button type="button" data-go="#home">Back to top</button>
+  </footer>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/flow-field.js"></script>
 </body>
 
 </html>
