@@ -9,6 +9,8 @@ kramdown:
 
 permalink: /blog/:year/:month/:day/:title/
 
+future: true
+
 defaults:
   - scope:
       path: ""
@@ -21,3 +23,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.zip"
+
