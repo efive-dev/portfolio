@@ -1,0 +1,32 @@
+{%- assign home = '/' | relative_url -%}
+{%- if page.url contains '/blog/' -%}{%- assign on_blog = true -%}{%- else -%}{%- assign on_blog = false -%}{%- endif -%}
+<header class="header" id="header">
+  <div class="header__row">
+    <a class="logo" href="{{ home }}#home" aria-label="Edoardo Quinto, home">
+      <img src="{{ '/assets/logo.webp' | relative_url }}" alt="" width="52" height="52">
+    </a>
+
+    <nav class="nav-pill" aria-label="Primary">
+      <a href="{{ home }}#home" data-sec="home" {% unless on_blog %}class="is-active" aria-current="true"{% endunless %}>Home</a>
+      <a href="{{ home }}#about" data-sec="about">About</a>
+      <a href="{{ home }}#work" data-sec="work">Work</a>
+      <a href="{{ home }}#experience" data-sec="experience">Career</a>
+      <a href="{{ '/blog/' | relative_url }}" data-sec="blog" {% if on_blog %}class="is-active" aria-current="page"{% endif %}>Blog</a>
+    </nav>
+
+    <a class="signin" href="{{ home }}#contact">Say hello</a>
+
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu"
+      aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay" hidden></div>
+<div class="menu" id="menu" hidden>
+  <a href="{{ home }}#home" data-sec="home" {% unless on_blog %}class="is-active"{% endunless %}>Home</a>
+  <a href="{{ home }}#about" data-sec="about">About</a>
+  <a href="{{ home }}#work" data-sec="work">Work</a>
+  <a href="{{ home }}#experience" data-sec="experience">Career</a>
+  <a href="{{ '/blog/' | relative_url }}" data-sec="blog" {% if on_blog %}class="is-active"{% endif %}>Blog</a>
+  <a class="menu__cta" href="{{ home }}#contact">Say hello</a>
+</div>

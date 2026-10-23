@@ -1,26 +1,33 @@
 title: "Edoardo Quinto"
 description: "Portfolio"
 
+# Project site served from https://<user>.github.io/portfolio/
+# If you rename the repository, change this to "/<new-repo-name>".
+# For a user site (<user>.github.io) or a custom domain, use baseurl: "".
 baseurl: "/portfolio"
 
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
 
+# Blog URLs: /portfolio/blog/2026/09/23/Hello_world/ (title part comes from the file name)
 permalink: /blog/:year/:month/:day/:title/
 
+# Show posts even if their date is later than "now" (timezone safe)
 future: true
 
+# Every file in _posts/ automatically uses _layouts/post.html
+# (body_class "sub" = scrolling sub-page over the darkened video)
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+      body_class: sub
 
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - "*.zip"
-

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if page.full_title %}{{ page.title | escape }}{% else %}{{ page.title | escape }} | Edoardo Quinto{% endif %}</title>
+  {% capture meta_desc %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 30 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+  <meta name="description" content="{{ meta_desc | strip | xml_escape }}">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+  {% if site.url %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Inter (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BubbledotICG-FinePos (primary display, retro dot-matrix) -->
+  <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet">
+
+  <!-- Geist Pixel Circle (fallback display, self-hosted via @font-face in styles.css) -->
+  <link rel="preload" href="{{ '/fonts/GeistPixel-Circle.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
+  <!-- Font Awesome 6.5.2 (brand icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+</head>
+
+<body class="{{ page.body_class }}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  {% include bg.html %}
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  <script src="{{ '/js/main.js' | relative_url }}" defer></script>
+</body>
+
+</html>
